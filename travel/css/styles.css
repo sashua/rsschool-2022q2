@@ -1,0 +1,125 @@
+/* === Globas styles start === */
+:root {
+    --primary-font-family: 'Aleo', serif;
+    --secondary-font-family: 'Red Hat Text', sans-serif;
+    --logo-font-family: 'Magra', sans-serif;
+
+    --primary-color: #0d606f;
+    --accent-color: #f2785c;
+    --white-color: #ffffff;
+
+    --primary-light-color: #f8f8f8;
+
+    --header-bg-color: rgba(242, 120, 92, 0.7);
+    --header-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+
+    --button-border-radius: 10px;
+    --button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+body {
+    font-family: var(--primary-font-family);
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+/* --- Globas styles end --- */
+
+/* === Common styles start === */
+/* Containers */
+.wrapper {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    max-width: 1240px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* Logo */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 6px;
+
+    font-family: var(--logo-font-family);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: var(--white-color);
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    column-gap: 42px;
+}
+
+.nav__link {
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: var(--white-color);
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 10px 30px;
+
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    box-shadow: var(--button-shadow);
+    border-radius: var(--button-border-radius);
+}
+
+/* --- Common styles end --- */
+
+/* === Header styles start === */
+.header {
+    background-color: var(--header-bg-color);
+    box-shadow: var(--header-shadow);
+}
+
+.header__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+/* --- Header styles end --- */
