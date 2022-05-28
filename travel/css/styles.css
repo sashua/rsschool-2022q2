@@ -94,6 +94,10 @@ ol {
     color: var(--white-color);
 }
 
+.logo__svg {
+    fill: currentColor;
+}
+
 /* Nav */
 .nav {
     display: flex;
@@ -251,7 +255,7 @@ ol {
     text-align: center;
 }
 
-.steps__icon {
+.steps__pic {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,7 +270,7 @@ ol {
     border-radius: var(--border-radius-big);
 }
 
-.steps__icon > svg {
+.steps__svg {
     fill: currentColor;
 }
 /* --- Steps styles end --- */
