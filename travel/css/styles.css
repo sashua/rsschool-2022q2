@@ -16,12 +16,27 @@
     --button-border-radius: 10px;
     --button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
         0px 2px 3px rgba(13, 96, 111, 0.16);
+    --button-big-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
+        0px 2px 3px rgba(13, 96, 111, 0.16);
+
+    --form-bg-color: rgba(255, 255, 255, 0.7);
+    --form-border-radius: 16px;
 }
 
 body {
     font-family: var(--primary-font-family);
     font-size: 20px;
     line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
 }
 
 a {
@@ -34,18 +49,12 @@ ul {
     padding: 0;
     list-style: none;
 }
-
-button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-}
 /* --- Globas styles end --- */
 
 /* === Common styles start === */
 /* Containers */
 .wrapper {
+    position: relative;
     max-width: 1440px;
     margin-right: auto;
     margin-left: auto;
@@ -101,13 +110,66 @@ button {
     color: var(--white-color);
     background-color: var(--primary-color);
     box-shadow: var(--button-shadow);
+    border: none;
     border-radius: var(--button-border-radius);
+    cursor: pointer;
 }
 
+.button:focus {
+    outline: none;
+}
+
+.button.button--big {
+    padding: 14px 32px;
+    font-size: 24px;
+    line-height: 1.3;
+    box-shadow: var(--button-big-shadow);
+}
+
+/* Form-plan */
+.form-plan {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: var(--form-bg-color);
+    border-radius: var(--form-border-radius);
+}
+
+.form-plan__text {
+    flex-grow: 1;
+    align-self: stretch;
+    padding: 18px 41px;
+
+    font-style: italic;
+    font-size: 24px;
+
+    color: var(--accent-color);
+    background-color: transparent;
+    border: none;
+    border-radius: inherit;
+}
+
+.form-plan__text::placeholder {
+    content: '';
+    color: inherit;
+}
+
+.form-plan__text:focus {
+    outline: none;
+}
+
+.form-plan__button {
+    margin: 18px;
+}
 /* --- Common styles end --- */
 
 /* === Header styles start === */
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     background-color: var(--header-bg-color);
     box-shadow: var(--header-shadow);
 }
@@ -123,3 +185,35 @@ button {
     padding-bottom: 25px;
 }
 /* --- Header styles end --- */
+
+/* === Hero styles start === */
+.hero {
+    padding-top: 122px;
+    padding-bottom: 254px;
+
+    background-image: url('../img/hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.hero__container {
+    max-width: 892px;
+}
+
+.hero__title {
+    margin-bottom: 36px;
+
+    font-weight: 700;
+    font-size: 80px;
+    color: var(--white-color);
+}
+
+.hero__text {
+    margin-bottom: 46px;
+
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white-color);
+}
+/* --- Hero styles end --- */
