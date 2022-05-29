@@ -459,7 +459,7 @@ img {
   color: var(--primary-hover-color);
 }
 
-.stories_button {
+.stories__button {
   margin: 0 auto;
 }
 /* --- Stories styles end --- */
