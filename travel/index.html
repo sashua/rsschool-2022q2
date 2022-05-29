@@ -98,7 +98,9 @@
                         <li class="steps__item">
                             <div class="steps__pic">
                                 <svg class="steps__svg" width="70" height="70">
-                                    <use href="./img/icons.svg#icon-calendar"></use>
+                                    <use
+                                        href="./img/icons.svg#icon-calendar"
+                                    ></use>
                                 </svg>
                             </div>
                             <p class="steps_text">Share us preferable dates</p>
@@ -106,17 +108,80 @@
                         <li class="steps__item">
                             <div class="steps__pic">
                                 <svg class="steps__svg" width="65" height="65">
-                                    <use href="./img/icons.svg#icon-airplane"></use>
+                                    <use
+                                        href="./img/icons.svg#icon-airplane"
+                                    ></use>
                                 </svg>
                             </div>
                             <p class="steps_text">
                                 We will give you recommendations
                             </p>
                         </li>
-                    </ul>
+                    </ol>
                 </div>
             </section>
             <!-- Steps end -->
+
+            <!-- Popular start -->
+            <section class="popular">
+                <h2 class="section-title popular__title">
+                    Popular destinations
+                </h2>
+                <div class="slider popular__slider">
+                    <ul class="slider__list">
+                        <li class="slider__item">
+                            <img
+                                class="slider__img"
+                                src="./img/spain.jpg"
+                                alt="Spain"
+                                width="800"
+                                height="800"
+                            />
+                            <h3 class="slider__caption">Spain</h3>
+                        </li>
+                        <li class="slider__item">
+                            <img
+                                class="slider__img"
+                                src="./img/japan.jpg"
+                                alt="Japan"
+                                width="800"
+                                height="800"
+                            />
+                            <h3 class="slider__caption">Japan</h3>
+                        </li>
+                        <li class="slider__item">
+                            <img
+                                class="slider__img"
+                                src="./img/usa.jpg"
+                                alt="USA"
+                                width="800"
+                                height="800"
+                            />
+                            <h3 class="slider__caption">USA</h3>
+                        </li>
+                    </ul>
+                    <ul class="slider__control">
+                        <li>
+                            <button class="slider__button"></button>
+                        </li>
+                        <li>
+                            <button
+                                class="slider__button slider__button--active"
+                            ></button>
+                        </li>
+                        <li>
+                            <button class="slider__button"></button>
+                        </li>
+                    </ul>
+                </div>
+                <button class="button button--big button--icon">
+                    <svg class="button__svg">
+                        <use href="./img/icons.svg#icon-arrow"></use>
+                    </svg>
+                    Find more
+                </button>
+            </section>
+            <!-- Popular end -->
         </div>
     </body>
 </html>

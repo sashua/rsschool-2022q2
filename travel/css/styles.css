@@ -50,6 +50,11 @@ ol {
     padding: 0;
     list-style: none;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
 /* --- Globas styles end --- */
 
 /* === Common styles start === */
@@ -115,7 +120,7 @@ ol {
 
 /* Button */
 .button {
-    display: inline-block;
+    display: block;
     padding: 10px 30px;
 
     font-family: var(--secondary-font);
@@ -139,7 +144,20 @@ ol {
     padding: 14px 32px;
     font-size: 24px;
     line-height: 1.3;
+    text-transform: capitalize;
     box-shadow: var(--button-big-shadow);
+}
+
+.button.button--icon {
+    display: flex;
+    align-items: center;
+}
+
+.button__svg {
+    width: 35px;
+    height: 25px;
+    margin-right: 15px;
+    fill: currentColor;
 }
 
 /* Form-plan */
@@ -176,6 +194,65 @@ ol {
 
 .form-plan__button {
     margin: 18px;
+}
+
+/* Slider */
+.slider {
+    overflow: hidden;
+}
+
+.slider__list {
+    display: flex;
+    column-gap: 60px;
+    margin-left: -540px;
+    margin-bottom: 24px;
+}
+
+.slider__item {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-big);
+}
+
+.slider__caption {
+    position: absolute;
+    bottom: 40px;
+    left: 15px;
+
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.3;
+
+    color: var(--white-color);
+}
+
+.slider__control {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.slider__button {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider__button:focus {
+    outline: none;
+}
+
+.slider__button--active {
+    opacity: 1;
 }
 /* --- Common styles end --- */
 
@@ -237,7 +314,7 @@ ol {
 /* === Steps styles start === */
 .steps {
     padding-top: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 17px;
 }
 
 .steps__title {
@@ -274,3 +351,21 @@ ol {
     fill: currentColor;
 }
 /* --- Steps styles end --- */
+
+/* === Popular styles start === */
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.popular__title {
+    margin-bottom: 46px;
+}
+
+.popular__slider {
+    margin-bottom: 40px;
+}
+/* --- Popular styles start --- */ ;
