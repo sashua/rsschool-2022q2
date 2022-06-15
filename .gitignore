@@ -1,3 +1,7 @@
+# My personal
+.vscode/
+doc/
+
 # Logs
 logs
 *.log
