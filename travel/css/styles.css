@@ -5,7 +5,7 @@
   --logo-font: "Magra", sans-serif;
 
   --primary-color: #0d606f;
-  --primary-hover-color: hsl(189, 79%, 20%);
+  --primary-hover-color: hsl(189, 78%, 30%);
   --accent-color: #f2785c;
   --white-color: #ffffff;
   --black-color: #000000;
@@ -90,7 +90,7 @@ img {
   font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 40px;
-  line-height: 1.3;
+  line-height: 1.33;
   text-align: center;
   text-transform: uppercase;
   color: var(--accent-color);
@@ -99,43 +99,42 @@ img {
 /* Logo */
 .logo {
   display: inline-flex;
-  align-items: center;
-  column-gap: 6px;
 
   font-family: var(--logo-font);
   font-weight: 600;
   font-size: 32px;
-  line-height: 39px;
+  line-height: 1.22;
 
   color: var(--white-color);
 }
 
 .logo__svg {
+  margin-right: 6px;
   fill: currentColor;
 }
 
 /* Nav */
-.nav {
+.nav__list {
   display: flex;
   column-gap: 42px;
 }
 
 .nav__link {
-  position: relative;
-
-  padding: 35px 0;
+  display: block;
+  padding-top: 35px;
+  padding-bottom: 34px;
 
   font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 1.31;
   color: var(--white-color);
 
   transition: color var(--transition-params);
 }
 
 .nav__link:hover {
-  color: var(--primary-color);
+  color: var(--primary-hover-color);
 }
 
 /* Button */
@@ -146,7 +145,7 @@ img {
   font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 1.31;
 
   color: var(--white-color);
   background-color: var(--primary-color);
@@ -164,9 +163,10 @@ img {
 }
 
 .button.button--big {
-  padding: 14px 32px;
+  min-width: 228px;
+  padding: 14px 33px;
   font-size: 24px;
-  line-height: 1.3;
+  line-height: 1.33;
   text-transform: capitalize;
   box-shadow: var(--button-big-shadow);
 }
@@ -179,7 +179,7 @@ img {
 .button__svg {
   width: 35px;
   height: 25px;
-  margin-right: 15px;
+  margin-right: 13px;
   fill: currentColor;
 
   transform: rotateX(0);
@@ -255,7 +255,8 @@ img {
   font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 32px;
-  line-height: 1.3;
+  line-height: 1.31;
+  text-transform: uppercase;
 
   color: var(--white-color);
 }
@@ -301,12 +302,15 @@ img {
 .header__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
-  justify-content: space-between;
   align-items: center;
+}
 
-  padding-top: 25px;
-  padding-bottom: 25px;
+.header__logo {
+  margin-right: 166px;
+}
+
+.header__nav {
+  margin-right: auto;
 }
 /* --- Header styles end --- */
 
@@ -315,7 +319,7 @@ img {
   padding-top: 122px;
   padding-bottom: 254px;
 
-  background-image: url("../img/hero-bg.jpg");
+  background-image: url("../img/bg-top.jpg");
   background-position: center top;
   background-size: cover;
 }
@@ -325,7 +329,7 @@ img {
 }
 
 .preview__title {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 
   font-weight: 700;
   font-size: 80px;
@@ -354,12 +358,12 @@ img {
 
 .steps__list {
   display: flex;
-  column-gap: 20px;
+  column-gap: 40px;
   justify-content: space-between;
 }
 
 .steps__item {
-  flex-basis: 320px;
+  flex-basis: 30%;
   text-align: center;
 }
 
@@ -419,7 +423,7 @@ img {
       transparent 60px,
       var(--white-transparent-color) 60px
     ),
-    url("../img/stories-bg.jpg");
+    url("../img/bg-bottom.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -459,6 +463,7 @@ img {
 .stories__link {
   font-weight: 700;
   text-decoration: underline;
+  text-transform: capitalize;
   transition: color var(--transition-params);
 }
 
@@ -494,7 +499,7 @@ img {
   font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.3;
+  line-height: 1.31;
   color: var(--white-color);
 }
 

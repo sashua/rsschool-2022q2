@@ -5,6 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Portal</title>
+
+    <!-- Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/icons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./img/icons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="./img/icons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="./img/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Modern normalize -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -12,12 +43,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Text:wght@500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -25,27 +60,29 @@
     <div class="wrapper">
       <!-- Header -->
       <header class="header">
-        <div class="header__container container">
-          <a class="logo" href="#preview">
-            <svg class="logo__svg" width="32" height="32">
+        <div class="container header__container">
+          <a class="logo header__logo" href="#preview">
+            <svg class="logo__svg" width="30" height="30">
               <use href="./img/icons.svg#icon-logo"></use>
             </svg>
             Travel Portal
           </a>
-          <ul class="nav">
-            <li class="nav__item">
-              <a href="#preview" class="nav__link">How It Works</a>
-            </li>
-            <li class="nav__item">
-              <a href="#steps" class="nav__link">Plan Your Trip</a>
-            </li>
-            <li class="nav__item">
-              <a href="#destinations" class="nav__link">Destinations</a>
-            </li>
-            <li class="nav__item">
-              <a href="#stories" class="nav__link">Travel Stories</a>
-            </li>
-          </ul>
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#preview" class="nav__link">How It Works</a>
+              </li>
+              <li class="nav__item">
+                <a href="#steps" class="nav__link">Plan Your Trip</a>
+              </li>
+              <li class="nav__item">
+                <a href="#destinations" class="nav__link">Destinations</a>
+              </li>
+              <li class="nav__item">
+                <a href="#stories" class="nav__link">Travel Stories</a>
+              </li>
+            </ul>
+          </nav>
           <button class="button" type="button">Login</button>
         </div>
       </header>
@@ -61,17 +98,18 @@
                 Recieve personalized recommendations for countries, hotels,
                 activities and more
               </p>
-              <form class="preview__form form-plan" action="">
+              <form class="preview__form form-plan" action="#!">
                 <input
                   class="form-plan__text"
                   type="text"
                   placeholder="What would you like to do?"
                 />
-                <input
+                <button
                   class="button button--big form-plan__button"
                   type="submit"
-                  value="Start Planning"
-                />
+                >
+                  Start Planning
+                </button>
               </form>
             </div>
           </div>
@@ -166,7 +204,7 @@
             class="destinations__button button button--big button--icon"
             type="button"
           >
-            <svg class="button__svg">
+            <svg class="button__svg" width="36" height="23">
               <use href="./img/icons.svg#icon-arrow"></use>
             </svg>
             Find more
@@ -302,21 +340,36 @@
           <p class="footer__text">All Rights Reserved © Travel Portal</p>
           <ul class="footer__social social">
             <li class="social__item">
-              <a class="social__link" href="#!" aria-label="Instagram">
+              <a
+                class="social__link"
+                href="https://rs.school/js-stage0/"
+                aria-label="Instagram"
+                target="_blank"
+              >
                 <svg class="social__svg" width="32" height="32">
                   <use href="./img/icons.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#!" aria-label="Youtube">
+              <a
+                class="social__link"
+                href="https://www.youtube.com/playlist?list=PLzLiprpVuH8df24MzZp-l5QMsJWJbi9qP"
+                aria-label="Youtube"
+                target="_blank"
+              >
                 <svg class="social__svg" width="32" height="32">
                   <use href="./img/icons.svg#icon-youtube"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#!" aria-label="Twitter">
+              <a
+                class="social__link"
+                href="https://github.com/sashua"
+                aria-label="Twitter"
+                target="_blank"
+              >
                 <svg class="social__svg" width="32" height="32">
                   <use href="./img/icons.svg#icon-twitter"></use>
                 </svg>
@@ -326,5 +379,7 @@
         </div>
       </footer>
     </div>
+
+    <!-- Scripts -->
   </body>
 </html>
