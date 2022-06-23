@@ -1,0 +1,11 @@
+@mixin media-phone-only {
+  @media screen and (max-width: ($desktop-breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

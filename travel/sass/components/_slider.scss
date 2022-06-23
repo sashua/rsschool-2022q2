@@ -1,0 +1,152 @@
+$mobile-img-gap: 30px;
+$desktop-img-gap: 60px;
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider__wrap {
+  position: relative;
+}
+
+// === Slider cards start ===
+.slider__list {
+  display: flex;
+  width: calc(100% * 3 + #{$mobile-img-gap} * 2);
+  transform: translateX(
+    calc((100% - #{$mobile-img-gap} * 2) / -3 - #{$mobile-img-gap})
+  );
+
+  @include media-desktop {
+    width: calc(100% * 1.75);
+    transform: translateX(calc((100% / 1.75 - 100%) / 2));
+  }
+}
+
+.slider__item {
+  position: relative;
+
+  flex-basis: calc((100% - 2 * #{$mobile-img-gap}) / 3);
+
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  border-radius: $border-radius-big;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-right: $mobile-img-gap;
+  }
+
+  @include media-desktop {
+    flex-basis: calc((100% - 2 * #{$desktop-img-gap}) / 3);
+
+    &:not(:last-child) {
+      margin-right: $desktop-img-gap;
+    }
+  }
+}
+
+.slider__img {
+  height: 210px;
+  object-fit: cover;
+
+  @include media-desktop {
+    height: auto;
+  }
+}
+
+.slider__caption {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.31;
+  text-transform: uppercase;
+  color: $white-color;
+
+  @include media-desktop {
+    top: calc(100% - 40px);
+    left: 15px;
+    transform: translateY(-100%);
+
+    font-size: 32px;
+  }
+}
+// --- Slider cards end ---
+
+// === Control buttons start ===
+.slider__controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5px;
+
+  @include media-desktop {
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.slider__control {
+  color: $accent-color;
+
+  @include media-desktop {
+    width: calc(125% / 6 - #{$desktop-img-gap} * 2 / 3);
+    color: transparent;
+  }
+}
+// --- Control buttons end ---
+
+// === Progress-bar start ===
+.slider__progress {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  @include media-desktop {
+    position: static;
+    margin-top: 24px;
+  }
+}
+
+.slider__progress-item {
+  width: 8px;
+  height: 8px;
+
+  background-color: $accent-color;
+  opacity: 0.5;
+  border-radius: 50%;
+
+  transition: opacity $transition-params;
+
+  &:not(:last-child) {
+    margin-right: 6px;
+  }
+
+  &--active {
+    opacity: 1;
+  }
+
+  @include media-desktop {
+    width: 20px;
+    height: 20px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+// --- Progress icons end ---

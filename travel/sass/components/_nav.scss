@@ -1,0 +1,26 @@
+.nav__list {
+  display: flex;
+  height: 100%;
+}
+
+.nav__link {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 21px;
+
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.31;
+  text-align: center;
+  color: $white-color;
+
+  transition: color $transition-params;
+
+  &:hover {
+    color: $primary-hover-color;
+  }
+}

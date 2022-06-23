@@ -1,0 +1,75 @@
+// === Button start ===
+.button {
+  display: block;
+  padding: 10px 30px;
+
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.31;
+
+  color: $white-color;
+  background-color: $primary-color;
+  box-shadow: $button-shadow;
+  border-radius: $border-radius;
+  transition: background-color $transition-params;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-hover-color;
+    outline: none;
+  }
+
+  &--big {
+    display: flex;
+    align-items: center;
+    padding: 8px 13px;
+    font-size: 11px;
+    line-height: 1.32;
+    text-transform: capitalize;
+    box-shadow: $button-big-shadow;
+
+    @include media-desktop {
+      min-width: 228px;
+      padding: 14px 33px;
+      font-size: 24px;
+    }
+  }
+}
+
+.button__svg {
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  fill: currentColor;
+
+  transform: rotateX(0);
+  transition: transform $transition-params;
+
+  .button:hover > &,
+  .button:focus > & {
+    transform: rotateX(180grad);
+  }
+
+  @include media-desktop {
+    width: 35px;
+    height: 25px;
+    margin-right: 13px;
+  }
+}
+// --- Button end ---
+
+// === Burger-button start ===
+.icon-button {
+  display: flex;
+  align-items: center;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}
+
+.icon-button__svg {
+  fill: currentColor;
+}
+// --- Button-burger end ---

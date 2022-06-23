@@ -1,0 +1,52 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 44px;
+
+  background-image: linear-gradient(#0d606f, transparent);
+
+  @include media-desktop {
+    padding-top: 0;
+
+    background-image: none;
+    background-color: $header-bg-color;
+    box-shadow: $header-shadow;
+  }
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav {
+  display: none;
+
+  @include media-desktop {
+    display: block;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+  }
+}
+
+.header__button {
+  display: none;
+
+  @include media-desktop {
+    display: block;
+  }
+}
+
+.header__burger {
+  margin-left: auto;
+  margin-right: 4px;
+  color: $white-color;
+
+  @include media-desktop {
+    display: none;
+  }
+}
