@@ -53,7 +53,7 @@
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <!-- Wrapper -->
@@ -65,25 +65,55 @@
             <svg class="logo__svg" width="30" height="30">
               <use href="./img/icons.svg#icon-logo"></use>
             </svg>
-            Travel Portal
+            <span class="logo__text">Travel Portal</span>
           </a>
-          <nav class="nav header__nav">
+          <nav class="nav header__nav" data-menu>
+            <button class="icon-button nav__close" data-menu-close>
+              <svg class="icon-button__svg" width="15" height="15">
+                <use href="./img/icons.svg#icon-close"></use>
+              </svg>
+            </button>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#preview" class="nav__link">How It Works</a>
+                <a href="#preview" class="nav__link" data-menu-link
+                  >How It Works</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#steps" class="nav__link">Plan Your Trip</a>
+                <a href="#steps" class="nav__link" data-menu-link
+                  >Plan Your Trip</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#destinations" class="nav__link">Destinations</a>
+                <a href="#destinations" class="nav__link" data-menu-link
+                  >Destinations</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#stories" class="nav__link">Travel Stories</a>
+                <a href="#stories" class="nav__link" data-menu-link
+                  >Travel Stories</a
+                >
+              </li>
+              <li class="nav__item nav__item--phone-only">
+                <a href="#!" class="nav__link" data-menu-link>Account</a>
+              </li>
+              <li class="nav__item nav__item--phone-only">
+                <a href="#footer" class="nav__link" data-menu-link
+                  >Social Media</a
+                >
               </li>
             </ul>
           </nav>
-          <button class="button" type="button">Login</button>
+          <button class="button header__button" type="button">Login</button>
+          <button
+            class="icon-button header__burger"
+            type="button"
+            data-menu-open
+          >
+            <svg class="icon-button__svg" width="35" height="32">
+              <use href="./img/icons.svg#icon-burger"></use>
+            </svg>
+          </button>
         </div>
       </header>
 
@@ -95,7 +125,7 @@
             <div class="preview__container">
               <h1 class="preview__title">Explore the beauty of the World</h1>
               <p class="preview__text">
-                Recieve personalized recommendations for countries, hotels,
+                Receive personalized recommendations for countries, hotels,
                 activities and more
               </p>
               <form class="preview__form form-plan" action="#!">
@@ -118,13 +148,11 @@
         <!-- Steps -->
         <section class="steps" id="steps">
           <div class="container">
-            <h2 class="steps__title section-title">
-              3 Steps to the perfect trip
-            </h2>
+            <h2 class="steps__title">3 Steps to the perfect trip</h2>
             <ol class="steps__list">
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg" width="50" height="50">
+                  <svg class="steps__svg">
                     <use href="./img/icons.svg#icon-bike"></use>
                   </svg>
                 </div>
@@ -132,7 +160,7 @@
               </li>
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg" width="70" height="70">
+                  <svg class="steps__svg">
                     <use href="./img/icons.svg#icon-calendar"></use>
                   </svg>
                 </div>
@@ -140,7 +168,7 @@
               </li>
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg" width="65" height="65">
+                  <svg class="steps__svg">
                     <use href="./img/icons.svg#icon-airplane"></use>
                   </svg>
                 </div>
@@ -152,178 +180,220 @@
 
         <!-- Destinations -->
         <section class="destinations" id="destinations">
-          <h2 class="destinations__title section-title">
-            Popular destinations
-          </h2>
+          <!-- <div class="container destinations__container"> -->
+          <h2 class="destinations__title">Popular destinations</h2>
           <div class="destinations__slider slider">
-            <ul class="slider__list">
-              <li class="slider__item">
-                <img
-                  class="slider__img"
-                  src="./img/spain.jpg"
-                  alt="Spain"
-                  width="800"
-                  height="800"
-                />
-                <h3 class="slider__caption">Spain</h3>
-              </li>
-              <li class="slider__item">
-                <img
-                  class="slider__img"
-                  src="./img/japan.jpg"
-                  alt="Japan"
-                  width="800"
-                  height="800"
-                />
-                <h3 class="slider__caption">Japan</h3>
-              </li>
-              <li class="slider__item">
-                <img
-                  class="slider__img"
-                  src="./img/usa.jpg"
-                  alt="USA"
-                  width="800"
-                  height="800"
-                />
-                <h3 class="slider__caption">USA</h3>
-              </li>
-            </ul>
-            <ul class="slider__control">
-              <li>
-                <button class="slider__button"></button>
-              </li>
-              <li>
-                <button class="slider__button slider__button--active"></button>
-              </li>
-              <li>
-                <button class="slider__button"></button>
-              </li>
+            <div class="slider__wrap">
+              <ul class="slider__list">
+                <li class="slider__item">
+                  <img
+                    class="slider__img"
+                    src="./img/spain.jpg"
+                    alt="Spain"
+                    width="800"
+                    height="800"
+                  />
+                  <h3 class="slider__caption">Spain</h3>
+                </li>
+                <li class="slider__item">
+                  <img
+                    class="slider__img"
+                    src="./img/japan.jpg"
+                    alt="Japan"
+                    width="800"
+                    height="800"
+                  />
+                  <h3 class="slider__caption">Japan</h3>
+                </li>
+                <li class="slider__item">
+                  <img
+                    class="slider__img"
+                    src="./img/usa.jpg"
+                    alt="USA"
+                    width="800"
+                    height="800"
+                  />
+                  <h3 class="slider__caption">USA</h3>
+                </li>
+              </ul>
+              <div class="slider__controls">
+                <button
+                  class="icon-button icon-button--disabled slider__control"
+                  type="button"
+                >
+                  <svg class="icon-button__svg" width="30" height="30">
+                    <use href="./img/icons.svg#icon-prev"></use>
+                  </svg>
+                </button>
+                <button class="icon-button slider__control" type="button">
+                  <svg class="icon-button__svg" width="30" height="30">
+                    <use href="./img/icons.svg#icon-next"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <ul class="slider__progress">
+              <li class="slider__progress-item"></li>
+              <li
+                class="slider__progress-item slider__progress-item--active"
+              ></li>
+              <li class="slider__progress-item"></li>
             </ul>
           </div>
-          <button
-            class="destinations__button button button--big button--icon"
-            type="button"
-          >
+          <button class="destinations__button button button--big" type="button">
             <svg class="button__svg" width="36" height="23">
               <use href="./img/icons.svg#icon-arrow"></use>
             </svg>
             Find more
           </button>
+          <!-- </div> -->
         </section>
 
         <!-- Stories -->
         <section class="stories" id="stories">
           <div class="container">
-            <h2 class="stories__title section-title">Travel stories</h2>
+            <h2 class="stories__title">Travel stories</h2>
           </div>
           <div class="stories__wrapper">
             <div class="container">
               <ul class="stories__list">
                 <li class="stories__item">
-                  <div class="stories__img">
-                    <img src="./img/story1.jpg" alt="Thailand" />
+                  <div class="stories__pic">
+                    <img
+                      class="stories__img"
+                      src="./img/story1.jpg"
+                      alt="Thailand"
+                      width="400"
+                      height="250"
+                    />
                   </div>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       10 Photos of Attractive Thailand
                     </h3>
                     <p class="stories__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit...
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nam vitae consequatur omnis ad cum consectetur dolores vel
+                      laboriosam itaque quos porro deserunt id, fugit
+                      repellendus facere esse veritatis quidem voluptates labore
+                      nisi dolor doloremque. Ratione ab perspiciatis praesentium
+                      est cum a harum facilis aspernatur esse ullam, iste
+                      voluptatum ex, quis itaque vitae perferendis. Ratione
+                      aspernatur magni facilis velit mollitia accusamus dolore
+                      totam perspiciatis qui rerum voluptas eius doloribus,
+                      deserunt iure sint recusandae labore deleniti. Quisquam,
+                      eum. Ea necessitatibus sunt optio obcaecati sit, facere
+                      cumque? Labore officia aliquam tenetur ratione libero,
+                      amet a vero officiis id, saepe quisquam aliquid eum
+                      deleniti.
                     </p>
                     <a class="stories__link" href="#!">Read more</a>
                   </div>
                 </li>
                 <li class="stories__item">
-                  <img
-                    class="stories__img"
-                    src="./img/story2.jpg"
-                    alt="Canyonlands National Park"
-                    width="400"
-                    height="250"
-                  />
+                  <div class="stories__pic">
+                    <img
+                      class="stories__img"
+                      src="./img/story2.jpg"
+                      alt="Canyonlands National Park"
+                      width="400"
+                      height="250"
+                    />
+                  </div>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       Canyonlands National Park, Utah
                     </h3>
                     <p class="stories__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit...
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Minima, reiciendis! Quaerat ea quas laudantium consequatur
+                      odit sit ex qui unde nisi quam laborum deserunt labore
+                      facere et velit aliquam temporibus eius, maxime omnis
+                      praesentium soluta veniam dolor. Blanditiis modi
+                      cupiditate, optio debitis voluptatibus ut eveniet
+                      quibusdam autem, vero deserunt nemo temporibus quasi
+                      corporis, ratione in animi quia explicabo reiciendis
+                      tempore. Voluptatem recusandae numquam cum molestiae
+                      consequuntur maiores dolorum sunt cupiditate a! Error eum
+                      in optio autem dolores pariatur illo soluta nobis
+                      consequuntur, veniam consectetur obcaecati magnam
+                      repellendus sed iure cupiditate totam rerum. Ad magnam
+                      nisi voluptatibus! Accusamus debitis repudiandae
+                      praesentium.
                     </p>
                     <a class="stories__link" href="#!">Read more</a>
                   </div>
                 </li>
                 <li class="stories__item">
-                  <img
-                    class="stories__img"
-                    src="./img/story3.jpg"
-                    alt="Mountains"
-                    width="400"
-                    height="250"
-                  />
+                  <div class="stories__pic">
+                    <img
+                      class="stories__img"
+                      src="./img/story3.jpg"
+                      alt="Mountains"
+                      width="400"
+                      height="250"
+                    />
+                  </div>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       I left my heart in the Mountains!
                     </h3>
                     <p class="stories__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit...
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Id minima enim quibusdam ea. Voluptates veniam aspernatur
+                      labore provident delectus cum consequatur quidem. Dolor
+                      quae nesciunt rem quos. Reprehenderit expedita nesciunt
+                      dicta modi sed quas veniam, praesentium iusto
+                      exercitationem consequatur beatae aut odio ut minus,
+                      voluptatum, quam mollitia rerum. Cupiditate debitis
+                      molestias consequatur ad aut exercitationem repudiandae
+                      impedit perspiciatis magnam libero autem, beatae
+                      praesentium nostrum minus non officiis ut quaerat suscipit
+                      deleniti nam assumenda nemo ratione itaque? Ex nisi
+                      commodi amet, dignissimos voluptatibus, accusamus itaque
+                      exercitationem eaque asperiores dicta iure aperiam
+                      delectus consequuntur, et quas nam nulla inventore
+                      voluptate expedita aut.
                     </p>
                     <a class="stories__link" href="#!">Read more</a>
                   </div>
                 </li>
                 <li class="stories__item">
-                  <img
-                    class="stories__img"
-                    src="./img/story4.jpg"
-                    alt="Long road"
-                    width="400"
-                    height="250"
-                  />
+                  <div class="stories__pic">
+                    <img
+                      class="stories__img"
+                      src="./img/story4.jpg"
+                      alt="Long road"
+                      width="400"
+                      height="250"
+                    />
+                  </div>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       The Longest journey in my life!
                     </h3>
                     <p class="stories__text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit...
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Deserunt laudantium assumenda iste voluptatem consequuntur
+                      perferendis culpa iusto necessitatibus nesciunt. Ex
+                      doloribus molestias dolorem minima. Ut dolorem voluptate
+                      veniam omnis esse nulla itaque rem maiores eum commodi
+                      incidunt quibusdam veritatis delectus officia obcaecati
+                      labore atque, corporis ab blanditiis voluptatem hic iusto
+                      dicta recusandae. Veniam atque dignissimos voluptas error
+                      est quo, tempora exercitationem tenetur velit alias
+                      reprehenderit numquam non porro deserunt a quis et
+                      assumenda praesentium sequi saepe repudiandae fugit. Esse,
+                      maiores nisi. Necessitatibus, quidem! Numquam aperiam
+                      fugiat, eveniet soluta dolore officia vero quisquam
+                      explicabo nobis perferendis, deserunt est amet non
+                      expedita.
                     </p>
                     <a class="stories__link" href="#!">Read more</a>
                   </div>
                 </li>
               </ul>
-              <button
-                class="stories__button button button--big button--icon"
-                type="button"
-              >
+              <button class="stories__button button button--big" type="button">
                 <svg class="button__svg">
                   <use href="./img/icons.svg#icon-arrow"></use>
                 </svg>
@@ -335,7 +405,7 @@
       </main>
 
       <!-- Footer -->
-      <footer class="footer">
+      <footer class="footer" id="footer">
         <div class="footer__container container">
           <p class="footer__text">All Rights Reserved © Travel Portal</p>
           <ul class="footer__social social">
@@ -346,7 +416,7 @@
                 aria-label="Instagram"
                 target="_blank"
               >
-                <svg class="social__svg" width="32" height="32">
+                <svg class="social__svg" width="34" height="34">
                   <use href="./img/icons.svg#icon-instagram"></use>
                 </svg>
               </a>
@@ -358,7 +428,7 @@
                 aria-label="Youtube"
                 target="_blank"
               >
-                <svg class="social__svg" width="32" height="32">
+                <svg class="social__svg" width="34" height="34">
                   <use href="./img/icons.svg#icon-youtube"></use>
                 </svg>
               </a>
@@ -370,7 +440,7 @@
                 aria-label="Twitter"
                 target="_blank"
               >
-                <svg class="social__svg" width="32" height="32">
+                <svg class="social__svg" width="34" height="34">
                   <use href="./img/icons.svg#icon-twitter"></use>
                 </svg>
               </a>
@@ -378,9 +448,11 @@
           </ul>
         </div>
       </footer>
+      <div class="backdrop" data-backdrop></div>
     </div>
 
     <!-- Scripts -->
+    <script src="./js/script.js"></script>
     <script src="./js/score.js"></script>
   </body>
 </html>

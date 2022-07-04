@@ -1,0 +1,26 @@
+body {
+  font-family: $primary-font;
+  font-size: 9px;
+  line-height: 1.22;
+  color: $primary-color;
+
+  @include media-desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+h2 {
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.36;
+  text-align: center;
+  text-transform: uppercase;
+  color: $accent-color;
+
+  @include media-desktop {
+    font-size: 40px;
+    line-height: 1.33;
+  }
+}
