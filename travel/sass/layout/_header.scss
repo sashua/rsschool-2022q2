@@ -22,10 +22,20 @@
 }
 
 .header__nav {
-  display: none;
+  @include media-phone-only {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: transform $transition-params;
+
+    &.is-shown {
+      transform: translateX(0);
+    }
+  }
 
   @include media-desktop {
-    display: block;
     height: 90px;
     margin-left: auto;
     margin-right: auto;

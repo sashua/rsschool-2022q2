@@ -67,24 +67,49 @@
             </svg>
             <span class="logo__text">Travel Portal</span>
           </a>
-          <nav class="nav header__nav">
+          <nav class="nav header__nav" data-menu>
+            <button class="icon-button nav__close" data-menu-close>
+              <svg class="icon-button__svg" width="15" height="15">
+                <use href="./img/icons.svg#icon-close"></use>
+              </svg>
+            </button>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#preview" class="nav__link">How It Works</a>
+                <a href="#preview" class="nav__link" data-menu-link
+                  >How It Works</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#steps" class="nav__link">Plan Your Trip</a>
+                <a href="#steps" class="nav__link" data-menu-link
+                  >Plan Your Trip</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#destinations" class="nav__link">Destinations</a>
+                <a href="#destinations" class="nav__link" data-menu-link
+                  >Destinations</a
+                >
               </li>
               <li class="nav__item">
-                <a href="#stories" class="nav__link">Travel Stories</a>
+                <a href="#stories" class="nav__link" data-menu-link
+                  >Travel Stories</a
+                >
+              </li>
+              <li class="nav__item nav__item--phone-only">
+                <a href="#!" class="nav__link" data-menu-link>Account</a>
+              </li>
+              <li class="nav__item nav__item--phone-only">
+                <a href="#footer" class="nav__link" data-menu-link
+                  >Social Media</a
+                >
               </li>
             </ul>
           </nav>
           <button class="button header__button" type="button">Login</button>
-          <button class="icon-button header__burger" type="button">
+          <button
+            class="icon-button header__burger"
+            type="button"
+            data-menu-open
+          >
             <svg class="icon-button__svg" width="35" height="32">
               <use href="./img/icons.svg#icon-burger"></use>
             </svg>
@@ -380,7 +405,7 @@
       </main>
 
       <!-- Footer -->
-      <footer class="footer">
+      <footer class="footer" id="footer">
         <div class="footer__container container">
           <p class="footer__text">All Rights Reserved © Travel Portal</p>
           <ul class="footer__social social">
@@ -423,9 +448,11 @@
           </ul>
         </div>
       </footer>
+      <div class="backdrop" data-backdrop></div>
     </div>
 
     <!-- Scripts -->
+    <script src="./js/script.js"></script>
     <script src="./js/score.js"></script>
   </body>
 </html>
