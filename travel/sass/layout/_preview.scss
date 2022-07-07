@@ -2,15 +2,23 @@
   padding-top: 142px;
   padding-bottom: 60px;
 
-  background-image: url("../img/bg-top-s.jpg");
+  background-image: url("../img/backgrounds/top-mobile.jpg");
   background-position: center top;
   background-size: cover;
+
+  @include media-2x {
+    background-image: url("../img/backgrounds/top-mobile@2x.jpg");
+  }
 
   @include media-desktop {
     padding-top: 122px;
     padding-bottom: 254px;
 
-    background-image: url("../img/bg-top.jpg");
+    background-image: url("../img/backgrounds/top-desktop.jpg");
+
+    @include media-2x {
+      background-image: url("../img/backgrounds/top-desktop@2x.jpg");
+    }
   }
 }
 

@@ -48,15 +48,6 @@ $desktop-img-gap: 60px;
   }
 }
 
-.slider__img {
-  height: 210px;
-  object-fit: cover;
-
-  @include media-desktop {
-    height: auto;
-  }
-}
-
 .slider__caption {
   position: absolute;
   top: 8px;

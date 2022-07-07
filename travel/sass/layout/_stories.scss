@@ -23,9 +23,18 @@
       transparent 65px,
       $white-transparent-color 65px
     ),
-    url("../img/bg-bottom-s.jpg");
+    url("../img/backgrounds/bottom-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include media-2x {
+    background-image: linear-gradient(
+        to top,
+        transparent 65px,
+        $white-transparent-color 65px
+      ),
+      url("../img/backgrounds/bottom-mobile@2x.jpg");
+  }
 
   @include media-desktop {
     padding-top: 40px;
@@ -36,7 +45,16 @@
         transparent 60px,
         $white-transparent-color 60px
       ),
-      url("../img/bg-bottom.jpg");
+      url("../img/backgrounds/bottom-desktop.jpg");
+
+    @include media-2x {
+      background-image: linear-gradient(
+          to top,
+          transparent 65px,
+          $white-transparent-color 65px
+        ),
+        url("../img/backgrounds/bottom-desktop@2x.jpg");
+    }
   }
 }
 

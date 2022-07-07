@@ -63,14 +63,14 @@
         <div class="container header__container">
           <a class="logo header__logo" href="#preview">
             <svg class="logo__svg" width="30" height="30">
-              <use href="./img/icons.svg#icon-logo"></use>
+              <use href="./img/sprite.svg#icon-logo"></use>
             </svg>
             <span class="logo__text">Travel Portal</span>
           </a>
           <nav class="nav header__nav" data-menu>
             <button class="icon-button nav__close" data-menu-close>
               <svg class="icon-button__svg" width="15" height="15">
-                <use href="./img/icons.svg#icon-close"></use>
+                <use href="./img/sprite.svg#icon-close"></use>
               </svg>
             </button>
             <ul class="nav__list">
@@ -111,7 +111,7 @@
             data-menu-open
           >
             <svg class="icon-button__svg" width="35" height="32">
-              <use href="./img/icons.svg#icon-burger"></use>
+              <use href="./img/sprite.svg#icon-burger"></use>
             </svg>
           </button>
         </div>
@@ -153,7 +153,7 @@
               <li class="steps__item">
                 <div class="steps__pic">
                   <svg class="steps__svg">
-                    <use href="./img/icons.svg#icon-bike"></use>
+                    <use href="./img/sprite.svg#icon-bike"></use>
                   </svg>
                 </div>
                 <p class="steps_text">Tell us what you want to do</p>
@@ -161,7 +161,7 @@
               <li class="steps__item">
                 <div class="steps__pic">
                   <svg class="steps__svg">
-                    <use href="./img/icons.svg#icon-calendar"></use>
+                    <use href="./img/sprite.svg#icon-calendar"></use>
                   </svg>
                 </div>
                 <p class="steps_text">Share us preferable dates</p>
@@ -169,7 +169,7 @@
               <li class="steps__item">
                 <div class="steps__pic">
                   <svg class="steps__svg">
-                    <use href="./img/icons.svg#icon-airplane"></use>
+                    <use href="./img/sprite.svg#icon-airplane"></use>
                   </svg>
                 </div>
                 <p class="steps_text">We will give you recommendations</p>
@@ -186,33 +186,81 @@
             <div class="slider__wrap">
               <ul class="slider__list">
                 <li class="slider__item">
-                  <img
-                    class="slider__img"
-                    src="./img/spain.jpg"
-                    alt="Spain"
-                    width="800"
-                    height="800"
-                  />
+                  <picture class="slider-pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/slider/spain-desktop.jpg    1x,
+                        ./img/slider/spain-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/slider/spain-mobile.jpg    1x,
+                        ./img/slider/spain-mobile@2x.jpg 2x
+                      "
+                    />
+                    <img
+                      class="slider__img"
+                      src="./img/slider/spain-mobile.jpg"
+                      width="360"
+                      height="210"
+                      alt="Spain"
+                    />
+                  </picture>
                   <h3 class="slider__caption">Spain</h3>
                 </li>
+
                 <li class="slider__item">
-                  <img
-                    class="slider__img"
-                    src="./img/japan.jpg"
-                    alt="Japan"
-                    width="800"
-                    height="800"
-                  />
+                  <picture class="slider-pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/slider/japan-desktop.jpg    1x,
+                        ./img/slider/japan-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/slider/japan-mobile.jpg    1x,
+                        ./img/slider/japan-mobile@2x.jpg 2x
+                      "
+                    />
+                    <img
+                      class="slider__img"
+                      src="./img/slider/japan-mobile.jpg"
+                      width="360"
+                      height="210"
+                      alt="Japan"
+                    />
+                  </picture>
                   <h3 class="slider__caption">Japan</h3>
                 </li>
+
                 <li class="slider__item">
-                  <img
-                    class="slider__img"
-                    src="./img/usa.jpg"
-                    alt="USA"
-                    width="800"
-                    height="800"
-                  />
+                  <picture class="slider-pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/slider/usa-desktop.jpg    1x,
+                        ./img/slider/usa-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/slider/usa-mobile.jpg    1x,
+                        ./img/slider/usa-mobile@2x.jpg 2x
+                      "
+                    />
+                    <img
+                      class="slider__img"
+                      src="./img/slider/usa-mobile.jpg"
+                      width="360"
+                      height="210"
+                      alt="USA"
+                    />
+                  </picture>
+
                   <h3 class="slider__caption">USA</h3>
                 </li>
               </ul>
@@ -222,12 +270,12 @@
                   type="button"
                 >
                   <svg class="icon-button__svg" width="30" height="30">
-                    <use href="./img/icons.svg#icon-prev"></use>
+                    <use href="./img/sprite.svg#icon-prev"></use>
                   </svg>
                 </button>
                 <button class="icon-button slider__control" type="button">
                   <svg class="icon-button__svg" width="30" height="30">
-                    <use href="./img/icons.svg#icon-next"></use>
+                    <use href="./img/sprite.svg#icon-next"></use>
                   </svg>
                 </button>
               </div>
@@ -242,7 +290,7 @@
           </div>
           <button class="destinations__button button button--big" type="button">
             <svg class="button__svg" width="36" height="23">
-              <use href="./img/icons.svg#icon-arrow"></use>
+              <use href="./img/sprite.svg#icon-arrow"></use>
             </svg>
             Find more
           </button>
@@ -258,15 +306,28 @@
             <div class="container">
               <ul class="stories__list">
                 <li class="stories__item">
-                  <div class="stories__pic">
+                  <picture class="stories__pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/stories/story1-desktop.jpg    1x,
+                        ./img/stories/story1-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/stories/story1-mobile.jpg    1x,
+                        ./img/stories/story1-mobile@2x.jpg 2x
+                      "
+                    />
                     <img
                       class="stories__img"
-                      src="./img/story1.jpg"
+                      src="./img/stories/story1-mobile.jpg"
+                      width="155"
+                      height="130"
                       alt="Thailand"
-                      width="400"
-                      height="250"
                     />
-                  </div>
+                  </picture>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       10 Photos of Attractive Thailand
@@ -291,15 +352,28 @@
                   </div>
                 </li>
                 <li class="stories__item">
-                  <div class="stories__pic">
+                  <picture class="stories__pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/stories/story2-desktop.jpg    1x,
+                        ./img/stories/story2-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/stories/story2-mobile.jpg    1x,
+                        ./img/stories/story2-mobile@2x.jpg 2x
+                      "
+                    />
                     <img
                       class="stories__img"
-                      src="./img/story2.jpg"
+                      src="./img/stories/story2-mobile.jpg"
+                      width="155"
+                      height="130"
                       alt="Canyonlands National Park"
-                      width="400"
-                      height="250"
                     />
-                  </div>
+                  </picture>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       Canyonlands National Park, Utah
@@ -325,15 +399,28 @@
                   </div>
                 </li>
                 <li class="stories__item">
-                  <div class="stories__pic">
+                  <picture class="stories__pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/stories/story3-desktop.jpg    1x,
+                        ./img/stories/story3-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/stories/story3-mobile.jpg    1x,
+                        ./img/stories/story3-mobile@2x.jpg 2x
+                      "
+                    />
                     <img
                       class="stories__img"
-                      src="./img/story3.jpg"
+                      src="./img/stories/story3-mobile.jpg"
+                      width="155"
+                      height="130"
                       alt="Mountains"
-                      width="400"
-                      height="250"
                     />
-                  </div>
+                  </picture>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       I left my heart in the Mountains!
@@ -359,15 +446,28 @@
                   </div>
                 </li>
                 <li class="stories__item">
-                  <div class="stories__pic">
+                  <picture class="stories__pic">
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./img/stories/story4-desktop.jpg    1x,
+                        ./img/stories/story4-desktop@2x.jpg 2x
+                      "
+                    />
+                    <source
+                      srcset="
+                        ./img/stories/story4-mobile.jpg    1x,
+                        ./img/stories/story4-mobile@2x.jpg 2x
+                      "
+                    />
                     <img
                       class="stories__img"
-                      src="./img/story4.jpg"
+                      src="./img/stories/story4-mobile.jpg"
+                      width="155"
+                      height="130"
                       alt="Long road"
-                      width="400"
-                      height="250"
                     />
-                  </div>
+                  </picture>
                   <div class="stories__desc">
                     <h3 class="stories__subtitle">
                       The Longest journey in my life!
@@ -395,7 +495,7 @@
               </ul>
               <button class="stories__button button button--big" type="button">
                 <svg class="button__svg">
-                  <use href="./img/icons.svg#icon-arrow"></use>
+                  <use href="./img/sprite.svg#icon-arrow"></use>
                 </svg>
                 See more
               </button>
@@ -417,7 +517,7 @@
                 target="_blank"
               >
                 <svg class="social__svg" width="34" height="34">
-                  <use href="./img/icons.svg#icon-instagram"></use>
+                  <use href="./img/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
@@ -429,7 +529,7 @@
                 target="_blank"
               >
                 <svg class="social__svg" width="34" height="34">
-                  <use href="./img/icons.svg#icon-youtube"></use>
+                  <use href="./img/sprite.svg#icon-youtube"></use>
                 </svg>
               </a>
             </li>
@@ -441,7 +541,7 @@
                 target="_blank"
               >
                 <svg class="social__svg" width="34" height="34">
-                  <use href="./img/icons.svg#icon-twitter"></use>
+                  <use href="./img/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
