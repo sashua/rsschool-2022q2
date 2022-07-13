@@ -67,44 +67,36 @@
             </svg>
             <span class="logo__text">Travel Portal</span>
           </a>
-          <nav class="nav header__nav" data-menu>
-            <button class="icon-button nav__close" data-menu-close>
+          <nav class="nav" data-menu>
+            <button class="icon-button nav__close">
               <svg class="icon-button__svg" width="15" height="15">
                 <use href="./img/sprite.svg#icon-close"></use>
               </svg>
             </button>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#preview" class="nav__link" data-menu-link
-                  >How It Works</a
-                >
+                <a href="#preview" class="nav__link">How It Works</a>
               </li>
               <li class="nav__item">
-                <a href="#steps" class="nav__link" data-menu-link
-                  >Plan Your Trip</a
-                >
+                <a href="#steps" class="nav__link">Plan Your Trip</a>
               </li>
               <li class="nav__item">
-                <a href="#destinations" class="nav__link" data-menu-link
-                  >Destinations</a
-                >
+                <a href="#destinations" class="nav__link">Destinations</a>
               </li>
               <li class="nav__item">
-                <a href="#stories" class="nav__link" data-menu-link
-                  >Travel Stories</a
-                >
+                <a href="#stories" class="nav__link">Travel Stories</a>
               </li>
               <li class="nav__item nav__item--phone-only">
-                <a href="#!" class="nav__link" data-menu-link>Account</a>
+                <a href="#!" class="nav__link" data-popup-open>Account</a>
               </li>
               <li class="nav__item nav__item--phone-only">
-                <a href="#footer" class="nav__link" data-menu-link
-                  >Social Media</a
-                >
+                <a href="#footer" class="nav__link">Social Media</a>
               </li>
             </ul>
           </nav>
-          <button class="button header__button" type="button">Login</button>
+          <button class="button header__button" type="button" data-popup-open>
+            Login
+          </button>
           <button
             class="icon-button header__burger"
             type="button"
@@ -152,7 +144,7 @@
             <ol class="steps__list">
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg">
+                  <svg class="steps__svg" width="40" height="40">
                     <use href="./img/sprite.svg#icon-bike"></use>
                   </svg>
                 </div>
@@ -160,7 +152,7 @@
               </li>
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg">
+                  <svg class="steps__svg" width="40" height="40">
                     <use href="./img/sprite.svg#icon-calendar"></use>
                   </svg>
                 </div>
@@ -168,7 +160,7 @@
               </li>
               <li class="steps__item">
                 <div class="steps__pic">
-                  <svg class="steps__svg">
+                  <svg class="steps__svg" width="40" height="40">
                     <use href="./img/sprite.svg#icon-airplane"></use>
                   </svg>
                 </div>
@@ -494,7 +486,7 @@
                 </li>
               </ul>
               <button class="stories__button button button--big" type="button">
-                <svg class="button__svg">
+                <svg class="button__svg" width="36" height="23">
                   <use href="./img/sprite.svg#icon-arrow"></use>
                 </svg>
                 See more
@@ -548,8 +540,55 @@
           </ul>
         </div>
       </footer>
-      <div class="backdrop" data-backdrop></div>
     </div>
+
+    <!-- Login pop-up -->
+    <div class="pop-up" data-popup>
+      <div class="pop-up__window">
+        <p class="pop-up__caption">Log in to your account</p>
+        <div class="pop-up__buttons">
+          <button class="button button--wide button--blue pop-up__button">
+            <svg class="button__svg" width="24" height="24">
+              <use href="./img/sprite.svg#icon-facebook"></use>
+            </svg>
+            Sign In with Facebook
+          </button>
+          <button class="button button--wide button--white pop-up__button">
+            <svg class="button__svg" width="24" height="24">
+              <use href="./img/sprite.svg#icon-google"></use>
+            </svg>
+            Sign In with Google
+          </button>
+        </div>
+        <p class="pop-up__or-text pop-up__text pop-up__text--with-lines">or</p>
+        <form class="pop-up__form">
+          <label class="pop-up__field">
+            E-mail
+            <input type="email" class="pop-up__input" name="email" />
+          </label>
+          <label class="pop-up__field">
+            Password
+            <input type="password" class="pop-up__input" name="password" />
+          </label>
+          <button class="button button--wide pop-up__submit" type="submit">
+            Sign In
+          </button>
+        </form>
+        <button class="link-button pop-up__password-recovery" type="button">
+          Forgot Your Password?
+        </button>
+        <div class="pop-up__line"></div>
+        <p class="pop-up__registration-text pop-up__text">
+          Don’t have an account?
+          <button class="link-button pop-up__registration-button" type="button">
+            Register
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="backdrop" data-backdrop></div>
 
     <!-- Scripts -->
     <script src="./js/script.js"></script>

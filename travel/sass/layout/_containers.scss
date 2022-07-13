@@ -1,3 +1,9 @@
+body {
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
 .wrapper {
   position: relative;
   max-width: $phone-breakpoint;
