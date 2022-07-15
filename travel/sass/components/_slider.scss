@@ -1,34 +1,56 @@
+// === Sass utils start ===
+$mobile-img-width: 100%;
 $mobile-img-gap: 30px;
+$mobile-translate-value: calc(#{$mobile-img-width} + #{$mobile-img-gap});
+$mobile-offset-value: calc(-2 * #{$mobile-translate-value});
+
+$desktop-img-width: 100% * (800px / $max-width);
 $desktop-img-gap: 60px;
+$desktop-translate-value: calc(#{$desktop-img-width} + #{$desktop-img-gap});
+$desktop-offset-value: calc(
+  -1 * (#{$desktop-img-width} - (
+          100% - #{$desktop-img-width} - 2 * #{$desktop-img-gap}
+        ) / 2 + #{$desktop-translate-value})
+);
+
+@mixin slider-animation($offset-value, $translate-value) {
+  transform: translateX($offset-value);
+
+  &.go-next {
+    transition: transform $transition-params;
+    transform: translateX(calc(#{$offset-value} - #{$translate-value}));
+  }
+
+  &.go-prev {
+    transition: transform $transition-params;
+    transform: translateX(calc(#{$offset-value} + #{$translate-value}));
+  }
+}
+// --- Sass utils start ---
 
 .slider {
   position: relative;
-  overflow: hidden;
 }
 
 .slider__wrap {
   position: relative;
+  overflow: hidden;
 }
 
 // === Slider cards start ===
 .slider__list {
   display: flex;
-  width: calc(100% * 3 + #{$mobile-img-gap} * 2);
-  transform: translateX(
-    calc((100% - #{$mobile-img-gap} * 2) / -3 - #{$mobile-img-gap})
-  );
+  @include slider-animation($mobile-offset-value, $mobile-translate-value);
 
   @include media-desktop {
-    width: calc(100% * 1.75);
-    transform: translateX(calc((100% / 1.75 - 100%) / 2));
+    @include slider-animation($desktop-offset-value, $desktop-translate-value);
   }
 }
 
 .slider__item {
   position: relative;
 
-  flex-basis: calc((100% - 2 * #{$mobile-img-gap}) / 3);
-
+  flex-basis: $mobile-img-width;
   flex-grow: 0;
   flex-shrink: 0;
 
@@ -40,7 +62,7 @@ $desktop-img-gap: 60px;
   }
 
   @include media-desktop {
-    flex-basis: calc((100% - 2 * #{$desktop-img-gap}) / 3);
+    flex-basis: $desktop-img-width;
 
     &:not(:last-child) {
       margin-right: $desktop-img-gap;
@@ -79,19 +101,15 @@ $desktop-img-gap: 60px;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 5px;
-
-  @include media-desktop {
-    height: 100%;
-    padding: 0;
-  }
+  height: 100%;
 }
 
 .slider__control {
+  padding: 5px;
   color: $accent-color;
 
   @include media-desktop {
-    width: calc(125% / 6 - #{$desktop-img-gap} * 2 / 3);
+    flex-basis: calc(50% - $desktop-img-width / 2 - $desktop-img-gap);
     color: transparent;
   }
 }
@@ -127,7 +145,7 @@ $desktop-img-gap: 60px;
     margin-right: 6px;
   }
 
-  &--active {
+  &.is-active {
     opacity: 1;
   }
 

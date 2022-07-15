@@ -3,7 +3,7 @@ $secondary-font: "Red Hat Text", sans-serif;
 $logo-font: "Magra", sans-serif;
 
 $primary-color: #0d606f;
-$primary-hover-color: hsl(189, 78%, 30%);
+$primary-hover-color: hsl(189, 78%, 28%);
 $accent-color: #f2785c;
 $white-color: #ffffff;
 $black-color: #000000;
@@ -23,12 +23,13 @@ $stories-shadow: 0px 4px 4px $primary-color;
 $border-radius: 10px;
 $border-radius-big: 16px;
 
-$transition-params: 200ms ease-out;
+$transition-params: 300ms ease-out;
 
 $container-padding: 15px;
 $container-width: 1200px + $container-padding * 2;
 $min-width: 320px;
+$mobile-width: 390px;
 $max-width: 1440px;
 
-$phone-breakpoint: 390px;
+$mobile-breakpoint: 390px;
 $desktop-breakpoint: 768px;

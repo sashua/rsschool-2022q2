@@ -21,28 +21,6 @@
   align-items: center;
 }
 
-.header__nav {
-  @include media-phone-only {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    transform: translateX(100%);
-    transition: transform $transition-params;
-
-    &.is-shown {
-      transform: translateX(0);
-    }
-  }
-
-  @include media-desktop {
-    height: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 30px;
-  }
-}
-
 .header__button {
   display: none;
 

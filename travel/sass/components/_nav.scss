@@ -1,17 +1,42 @@
 .nav {
-  @include media-phone-only {
+  @include media-mobile-only {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transform: translateX(100%);
+
     min-width: 165px;
+    max-height: 100vh;
     padding: 15px 15px 30px;
 
     background-color: $accent-color;
     border-radius: 10px;
+
+    overflow-y: auto;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility $transition-params, transform $transition-params;
+
+    &.is-shown {
+      visibility: visible;
+      transform: translateX(0);
+      pointer-events: initial;
+    }
+  }
+
+  @include media-desktop {
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
   }
 }
 
 .nav__close {
   display: none;
 
-  @include media-phone-only {
+  @include media-mobile-only {
     display: block;
     margin-bottom: 14px;
     color: $white-transparent-color;
@@ -21,7 +46,7 @@
 .nav__list {
   display: flex;
 
-  @include media-phone-only {
+  @include media-mobile-only {
     flex-direction: column;
     align-items: flex-end;
   }
@@ -33,7 +58,7 @@
 
 .nav__item {
   &:not(:last-child) {
-    @include media-phone-only {
+    @include media-mobile-only {
       margin-bottom: 10px;
     }
   }

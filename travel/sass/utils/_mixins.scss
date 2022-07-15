@@ -1,4 +1,4 @@
-@mixin media-phone-only {
+@mixin media-mobile-only {
   @media screen and (max-width: ($desktop-breakpoint - 1px)) {
     @content;
   }
