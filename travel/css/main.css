@@ -461,33 +461,63 @@ h2 {
 
 .slider {
   position: relative;
-  overflow: hidden;
 }
 
 .slider__wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .slider__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: calc(100% * 3 + 30px * 2);
-  -webkit-transform: translateX(calc((100% - 30px * 2) / -3 - 30px));
-          transform: translateX(calc((100% - 30px * 2) / -3 - 30px));
+  -webkit-transform: translateX(calc(-2 * calc(100% + 30px)));
+          transform: translateX(calc(-2 * calc(100% + 30px)));
+}
+.slider__list.go-next {
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+  -webkit-transform: translateX(calc(calc(-2 * calc(100% + 30px)) - calc(100% + 30px)));
+          transform: translateX(calc(calc(-2 * calc(100% + 30px)) - calc(100% + 30px)));
+}
+.slider__list.go-prev {
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+  -webkit-transform: translateX(calc(calc(-2 * calc(100% + 30px)) + calc(100% + 30px)));
+          transform: translateX(calc(calc(-2 * calc(100% + 30px)) + calc(100% + 30px)));
 }
 @media screen and (min-width: 768px) {
   .slider__list {
-    width: 175%;
-    -webkit-transform: translateX(-21.4285714286%);
-            transform: translateX(-21.4285714286%);
+    -webkit-transform: translateX(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))));
+            transform: translateX(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))));
+  }
+  .slider__list.go-next {
+    -webkit-transition: -webkit-transform 300ms ease-out;
+    transition: -webkit-transform 300ms ease-out;
+    transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+    -webkit-transform: translateX(calc(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))) - calc(55.5555555556% + 60px)));
+            transform: translateX(calc(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))) - calc(55.5555555556% + 60px)));
+  }
+  .slider__list.go-prev {
+    -webkit-transition: -webkit-transform 300ms ease-out;
+    transition: -webkit-transform 300ms ease-out;
+    transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+    -webkit-transform: translateX(calc(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))) + calc(55.5555555556% + 60px)));
+            transform: translateX(calc(calc(-1 * (55.5555555556% - ( 100% - 55.5555555556% - 2 * 60px ) / 2 + calc(55.5555555556% + 60px))) + calc(55.5555555556% + 60px)));
   }
 }
 
 .slider__item {
   position: relative;
-  -ms-flex-preferred-size: calc((100% - 2 * 30px) / 3);
-      flex-basis: calc((100% - 2 * 30px) / 3);
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -501,8 +531,8 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   .slider__item {
-    -ms-flex-preferred-size: calc((100% - 2 * 60px) / 3);
-        flex-basis: calc((100% - 2 * 60px) / 3);
+    -ms-flex-preferred-size: 55.5555555556%;
+        flex-basis: 55.5555555556%;
   }
   .slider__item:not(:last-child) {
     margin-right: 60px;
@@ -542,21 +572,17 @@ h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding: 0 5px;
-}
-@media screen and (min-width: 768px) {
-  .slider__controls {
-    height: 100%;
-    padding: 0;
-  }
+  height: 100%;
 }
 
 .slider__control {
+  padding: 5px;
   color: #f2785c;
 }
 @media screen and (min-width: 768px) {
   .slider__control {
-    width: calc(125% / 6 - 60px * 2 / 3);
+    -ms-flex-preferred-size: calc(22.2222222222% - 60px);
+        flex-basis: calc(22.2222222222% - 60px);
     color: transparent;
   }
 }
@@ -592,7 +618,7 @@ h2 {
 .slider__progress-item:not(:last-child) {
   margin-right: 6px;
 }
-.slider__progress-item--active {
+.slider__progress-item.is-active {
   opacity: 1;
 }
 @media screen and (min-width: 768px) {

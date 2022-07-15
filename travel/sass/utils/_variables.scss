@@ -28,7 +28,8 @@ $transition-params: 300ms ease-out;
 $container-padding: 15px;
 $container-width: 1200px + $container-padding * 2;
 $min-width: 320px;
+$mobile-width: 390px;
 $max-width: 1440px;
 
-$phone-breakpoint: 390px;
+$mobile-breakpoint: 390px;
 $desktop-breakpoint: 768px;

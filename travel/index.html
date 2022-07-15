@@ -174,7 +174,7 @@
         <section class="destinations" id="destinations">
           <!-- <div class="container destinations__container"> -->
           <h2 class="destinations__title">Popular destinations</h2>
-          <div class="destinations__slider slider">
+          <div class="destinations__slider slider" data-slider>
             <div class="slider__wrap">
               <ul class="slider__list">
                 <li class="slider__item">
@@ -258,14 +258,19 @@
               </ul>
               <div class="slider__controls">
                 <button
-                  class="icon-button icon-button--disabled slider__control"
+                  class="icon-button slider__control"
                   type="button"
+                  data-slider-action="go-prev"
                 >
                   <svg class="icon-button__svg" width="30" height="30">
                     <use href="./img/sprite.svg#icon-prev"></use>
                   </svg>
                 </button>
-                <button class="icon-button slider__control" type="button">
+                <button
+                  class="icon-button slider__control"
+                  type="button"
+                  data-slider-action="go-next"
+                >
                   <svg class="icon-button__svg" width="30" height="30">
                     <use href="./img/sprite.svg#icon-next"></use>
                   </svg>
@@ -274,9 +279,7 @@
             </div>
             <ul class="slider__progress">
               <li class="slider__progress-item"></li>
-              <li
-                class="slider__progress-item slider__progress-item--active"
-              ></li>
+              <li class="slider__progress-item"></li>
               <li class="slider__progress-item"></li>
             </ul>
           </div>

@@ -98,10 +98,109 @@ class PopUp {
   }
 }
 
+class Slider {
+  constructor() {
+    this.slider = document.querySelector("[data-slider]");
+    this.sliderList = this.slider.querySelector(".slider__list");
+    this.sliderButtons = this.slider.querySelectorAll(".slider__control");
+    this.progress = new Progress(
+      this.slider.querySelector(".slider__progress").children,
+      1
+    );
+
+    this.sliderList.prepend(this.sliderList.lastElementChild.cloneNode(true));
+
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    this.clickHandler = this.click.bind(this);
+    this.transitionEndHandler = this.transitionEnd.bind(this);
+
+    this.sliderButtons.forEach((item) =>
+      item.addEventListener("click", this.clickHandler)
+    );
+  }
+
+  click(event) {
+    const action = event.currentTarget.dataset.sliderAction;
+    this.sliderList.classList.remove("go-prev", "go-next");
+    this.sliderList.classList.add(action);
+    if (action === "go-prev") {
+      this.progress.activatePrev();
+    } else {
+      this.progress.activateNext();
+      this.sliderList.append(this.sliderList.children[1].cloneNode(true));
+    }
+
+    this.sliderButtons.forEach((item) =>
+      item.removeEventListener("click", this.clickHandler)
+    );
+    this.sliderList.addEventListener(
+      "transitionend",
+      this.transitionEndHandler
+    );
+  }
+
+  transitionEnd() {
+    if (this.sliderList.classList.contains("go-prev")) {
+      this.sliderList.removeChild(this.sliderList.lastElementChild);
+      this.sliderList.prepend(this.sliderList.lastElementChild.cloneNode(true));
+    }
+    if (this.sliderList.classList.contains("go-next")) {
+      this.sliderList.removeChild(this.sliderList.firstElementChild);
+    }
+    this.sliderList.classList.remove("go-prev", "go-next");
+
+    this.sliderList.removeEventListener(
+      "transitionend",
+      this.transitionEndHandler
+    );
+    this.sliderButtons.forEach((item) =>
+      item.addEventListener("click", this.clickHandler)
+    );
+  }
+}
+
+class Progress {
+  constructor(items, active) {
+    console.log(items);
+    this.items = items;
+    this.active = active;
+
+    this.deactivateAll();
+    this.activate(active);
+  }
+
+  deactivateAll() {
+    Array.prototype.forEach.call(this.items, (item) =>
+      item.classList.remove("is-active")
+    );
+  }
+
+  activate() {
+    this.items[this.active].classList.add("is-active");
+  }
+
+  activateNext() {
+    this.deactivateAll();
+    this.active = ++this.active % this.items.length;
+    this.activate();
+  }
+
+  activatePrev() {
+    this.deactivateAll();
+    this.active = this.active <= 0 ? this.items.length - 1 : --this.active;
+    this.activate();
+  }
+}
+
 window.onload = () => {
   const backdrop = document.querySelector("[data-backdrop]");
   const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
   const popupOpenButtons = document.querySelectorAll("[data-popup-open]");
+
   const menu = new Menu(backdrop, menuOpenButtons);
   const popup = new PopUp(backdrop, popupOpenButtons);
+  const slider = new Slider();
 };

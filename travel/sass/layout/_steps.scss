@@ -28,7 +28,7 @@
 
   text-align: center;
 
-  @include media-phone-only {
+  @include media-mobile-only {
     &:first-child {
       align-items: flex-start;
       text-align: left;
