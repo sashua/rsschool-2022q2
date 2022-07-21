@@ -11,10 +11,8 @@ Private repository for @sashua
 
 ## Projects
 
-### CV ([task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/cv/cv.md), [gh-pages](https://sashua.github.io/rsschool-cv/))
+1. CV ([task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/cv/cv.md), [gh-pages](https://sashua.github.io/rsschool-cv/))
 
-- [x] CV#3. Cross-Check: Score ???/???
+1. Travel ([task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/travel/travel.md), [gh-pages](https://rolling-scopes-school.github.io/sashua-JSFEPRESCHOOL2022Q2/travel/))
 
-### Travel ([task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/travel/travel.md), [gh-pages](https://rolling-scopes-school.github.io/sashua-JSFEPRESCHOOL2022Q2/travel/))
-
-- [x] Travel#1 - Фиксированная вёрстка: Score ???/???
+1. Momentum ([task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/momentum/momentum-stage1.md), [gh-pages](https://rolling-scopes-school.github.io/sashua-JSFEPRESCHOOL2022Q2/momentum/))
