@@ -42,6 +42,8 @@ class PopUp {
     this.popup = document.querySelector("[data-popup]");
     this.caption = this.popup.querySelector(".pop-up__caption");
     this.submitBtn = this.popup.querySelector(".pop-up__submit");
+    this.email = this.popup.querySelector("input[name='email']");
+    this.password = this.popup.querySelector("input[name='password']");
     this.text = this.popup.querySelector(".pop-up__registration-text");
     this.registrationBtn = this.popup.querySelector(
       ".pop-up__registration-button"
@@ -56,6 +58,7 @@ class PopUp {
     );
     this.popup.addEventListener("click", this.close.bind(this));
     this.backdrop.addEventListener("click", this.close.bind(this));
+    this.submitBtn.addEventListener("click", this.submit.bind(this));
     this.registrationBtn.addEventListener(
       "click",
       this.toggleRegistration.bind(this)
@@ -78,9 +81,31 @@ class PopUp {
     }
   }
 
+  submit(event) {
+    event.preventDefault();
+    const email = this.email.value.trim();
+    const password = this.password.value.trim();
+    if (!email) {
+      alert("Please enter email");
+      return;
+    }
+    if (!password) {
+      alert("Please enter password");
+      return;
+    }
+    alert(`Email: ${this.email.value}\nPassword: ${this.password.value}`);
+    this.clearInputs();
+    this.popup.click();
+  }
+
   toggleRegistration() {
     this.popup.classList.toggle("pop-up--registration");
     this.fillCaptions();
+  }
+
+  clearInputs() {
+    this.email.value = "";
+    this.password.value = "";
   }
 
   fillCaptions() {
