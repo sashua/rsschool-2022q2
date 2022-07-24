@@ -1,0 +1,6 @@
+.clock__time {
+  @include font($family: $mono-font, $size: 120px, $weight: 500, $height: 1);
+}
+.clock__date {
+  @include font($size: 25px);
+}

@@ -1,0 +1,17 @@
+{
+  "name": "momentum",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "latest",
+    "posthtml-include": "^1.7.4"
+  },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  }
+}

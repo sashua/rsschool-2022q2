@@ -1,0 +1,23 @@
+.widgets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("../img/night/01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.widgets__center {
+  text-align: center;
+}
+.widgets__left {
+  text-align: left;
+}
+.widgets__right {
+  text-align: right;
+}

@@ -1,6 +1,8 @@
 # My personal
 .vscode/
+.parcel-cache/
 doc/
+*.css.map
 
 # Logs
 logs

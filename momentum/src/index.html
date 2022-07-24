@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Fira+Sans+Condensed:wght@400;500&family=Fira+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <h1 class="visually-hidden">Momentum</h1>
+
+    <main class="widgets">
+      <div class="widgets__row">
+        <div class="widgets__left"></div>
+        <div class="widgets__right"></div>
+      </div>
+
+      <div class="widgets__row">
+        <div class="widgets__center">
+          <include src="./html/clock.html"></include>
+        </div>
+      </div>
+
+      <div class="widgets__row">
+        <div class="widgets__left"></div>
+        <div class="widgets__center"></div>
+        <div class="widgets__right"></div>
+      </div>
+    </main>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
