@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity $transition-params;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.button__svg {
+  width: 50%;
+  height: 50%;
+  fill: currentColor;
+}

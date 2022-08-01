@@ -1,0 +1,47 @@
+.greet {
+  @include font($size: 3rem, $weight: 500);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.greet__wrap {
+  position: relative;
+}
+
+.greet__input {
+  min-width: 10ch;
+  padding: 0.1em 0.2em;
+  transition: width $transition-params;
+
+  &:disabled {
+    min-width: 0;
+    margin-left: -0.2em;
+    margin-right: -0.2em;
+  }
+}
+
+.greet__test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.1em 0.2em;
+  visibility: hidden;
+}
+
+.greet__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: opacity $transition-params;
+}
+
+.greet:hover .greet__button {
+  opacity: 0.5;
+}
+
+.greet:hover .greet__button:hover {
+  opacity: 1;
+}
