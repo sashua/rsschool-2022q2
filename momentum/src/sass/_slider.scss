@@ -1,0 +1,36 @@
+.slider__bg {
+  background-color: #1d3557;
+  background-position: center;
+  background-size: cover;
+  transition: background-image $transition-params;
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+}
+
+.slider__button {
+  opacity: 0;
+
+  &:first-child {
+    transform: rotateY(180deg);
+  }
+}
+
+.slider:hover .slider__button {
+  opacity: 0.5;
+}
+
+.slider:hover .slider__button:hover {
+  opacity: 1;
+}
