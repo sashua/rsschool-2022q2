@@ -17,29 +17,26 @@
   <body>
     <h1 class="visually-hidden">Momentum</h1>
 
-    <main class="widgets slider__bg">
-      <div class="widgets__row">
-        <div class="widgets__item widgets__item--left"></div>
-        <div class="widgets__item widgets__item--right">
-          <include src="./html/weather.html"></include>
-        </div>
+    <main class="main slider__bg">
+      <include src="./html/slider.html"></include>
+
+      <div class="widget widget--top-left">
+        <include src="./html/player.html"></include>
+      </div>
+      <div class="widget widget--top-right">
+        <include src="./html/weather.html"></include>
       </div>
 
-      <div class="widgets__row">
-        <div class="widgets__item widgets__item--center">
-          <include src="./html/clock.html"></include>
-          <include src="./html/greet.html"></include>
-          <include src="./html/slider.html"></include>
-        </div>
+      <div class="widget widget--center">
+        <include src="./html/clock.html"></include>
+        <include src="./html/greet.html"></include>
       </div>
 
-      <div class="widgets__row">
-        <div class="widgets__item--left"></div>
-        <div class="widgets__item--center">
-          <include src="./html/quote.html"></include>
-        </div>
-        <div class="widgets__item--right"></div>
+      <div class="widget widget--bottom-left"></div>
+      <div class="widget widget--bottom-center">
+        <include src="./html/quote.html"></include>
       </div>
+      <div class="widget widget--bottom-right"></div>
     </main>
 
     <script src="./index.js" type="module"></script>

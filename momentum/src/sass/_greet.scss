@@ -1,24 +1,12 @@
 .greet {
   @include font($size: 3rem, $weight: 500);
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.greet__wrap {
-  position: relative;
-  z-index: 1;
 }
 
 .greet__input {
-  min-width: 10ch;
-  padding: 0.1em 0.2em;
-  transition: width $transition-params;
+  margin-left: -0.2em;
 
-  &:disabled {
-    min-width: 0;
-    margin-left: -0.2em;
-    margin-right: -0.2em;
+  .greet:hover & {
+    background-color: $transparent-bg-color;
   }
 }
 
@@ -27,21 +15,6 @@
   top: 0;
   left: 0;
   padding: 0.1em 0.2em;
+  border: 1px solid transparent;
   visibility: hidden;
-}
-
-.greet__button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
-  opacity: 0;
-}
-
-.greet:hover .greet__button {
-  opacity: 0.5;
-}
-
-.greet:hover .greet__button:hover {
-  opacity: 1;
 }

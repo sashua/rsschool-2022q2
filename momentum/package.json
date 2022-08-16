@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
+    "lodash.shuffle": "^4.2.0",
     "modern-normalize": "^1.1.0"
   }
 }

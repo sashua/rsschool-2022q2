@@ -1,3 +1,7 @@
+.clock {
+  padding-bottom: 2rem;
+}
+
 .clock__time {
   @include font(
     $family: $mono-font,

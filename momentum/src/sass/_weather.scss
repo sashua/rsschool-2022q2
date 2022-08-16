@@ -1,3 +1,59 @@
 .weather {
-  @include font($size: 1.5rem, $weight: 500);
+  @include font($size: 2rem);
+}
+
+.weather__input {
+  margin-right: -0.2em;
+  margin-bottom: 0.25em;
+
+  .weather:hover & {
+    background-color: $transparent-bg-color;
+  }
+}
+
+.weather__test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.1em 0.2em;
+  border: 1px solid transparent;
+  visibility: hidden;
+}
+
+.weather__description {
+  margin-bottom: 0.5em;
+  @include font($size: 0.5em);
+  text-transform: lowercase;
+}
+
+.weather__main-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  column-gap: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+.weather__add-info {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  column-gap: 1em;
+  @include font($size: 0.5em);
+  text-transform: lowercase;
+}
+
+.weather__add-info > span {
+  padding-left: 1.25em;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 1em;
+}
+
+.weather__add-info > .weather__wind {
+  background-image: url("../img/wind.svg");
+}
+
+.weather__add-info > .weather__humidity {
+  background-image: url("../img/humidity.svg");
 }

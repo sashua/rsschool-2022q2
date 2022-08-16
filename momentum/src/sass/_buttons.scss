@@ -7,16 +7,17 @@
 
   border-radius: 50%;
   opacity: 0.5;
-  transition: opacity $transition-params;
+  transition: background-color $transition-params, opacity $transition-params;
 
   &:hover,
   &:focus {
+    background-color: $transparent-bg-color;
     opacity: 1;
   }
 }
 
 .button__svg {
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 75%;
   fill: currentColor;
 }

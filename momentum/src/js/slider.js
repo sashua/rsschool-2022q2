@@ -12,58 +12,75 @@ const UNSPLASH_QUERIES = {
 };
 
 class Slider {
-  constructor(elem) {
-    this.elem = elem;
+  constructor(rootSelector, updateIntervalMinutes) {
+    this.refs = this.getRefs(rootSelector);
 
     this.slidesQty = 20;
     this.slideNum = Math.floor(Math.random() * this.slidesQty + 1);
 
-    this.bgElem = document.querySelector(".slider__bg");
-    [this.prevBtn, this.nextBtn] =
-      this.elem.querySelectorAll(".slider__button");
+    this.lastUpdateTime = 0;
+    this.updateInterval = updateIntervalMinutes * 60 * 1000;
 
     this.prevHandler = this.setPrevBg.bind(this);
     this.nextHandler = this.setNextBg.bind(this);
     this.addHandlers();
-    this.bgElem.addEventListener("transitionend", () => this.addHandlers());
+    this.refs.bg.addEventListener("transitionend", () => this.addHandlers());
+  }
+
+  getRefs(rootSelector) {
+    const rootElem = document.querySelector(rootSelector);
+    const [prevBtn, nextBtn] = rootElem.querySelectorAll(".slider__button");
+    return {
+      bg: document.querySelector(".slider__bg"),
+      prevBtn,
+      nextBtn,
+    };
   }
 
   addHandlers() {
-    this.prevBtn.addEventListener("click", this.prevHandler);
-    this.nextBtn.addEventListener("click", this.nextHandler);
+    this.refs.prevBtn.addEventListener("click", this.prevHandler);
+    this.refs.nextBtn.addEventListener("click", this.nextHandler);
   }
 
   removeHandlers() {
-    this.prevBtn.removeEventListener("click", this.prevHandler);
-    this.nextBtn.removeEventListener("click", this.nextHandler);
+    this.refs.prevBtn.removeEventListener("click", this.prevHandler);
+    this.refs.nextBtn.removeEventListener("click", this.nextHandler);
   }
 
   setPrevBg() {
     this.removeHandlers();
     this.setPrevNum();
     this.setBg();
+    this.refs.prevBtn.blur();
   }
 
   setNextBg() {
     this.removeHandlers();
     this.setNextNum();
     this.setBg();
+    this.refs.nextBtn.blur();
   }
 
-  updateTimeOfDay(timeOfDay) {
+  updateBg(timeOfDay) {
     if (this.timeOfDay !== timeOfDay) {
       this.timeOfDay = timeOfDay;
-      this.setBg();
+      this.lastUpdateTime = 0;
     }
+
+    if (Date.now() - this.lastUpdateTime < this.updateInterval) {
+      return;
+    }
+
+    this.setBg();
+    this.lastUpdateTime = Date.now();
   }
 
   async setBg() {
     const image = new Image();
     image.src = await this.getUnsplashUrl();
-    console.log(image.src);
     image.addEventListener(
       "load",
-      () => (this.bgElem.style.backgroundImage = `url('${image.src}')`)
+      () => (this.refs.bg.style.backgroundImage = `url('${image.src}')`)
     );
   }
 

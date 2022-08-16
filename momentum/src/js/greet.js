@@ -1,42 +1,38 @@
 class Greet {
-  constructor(elem) {
-    this.elem = elem;
-    this.textElem = this.elem.querySelector(".greet__text");
-    this.inputElem = this.elem.querySelector(".greet__input");
-    this.testElem = this.elem.querySelector(".greet__test");
-    this.buttonElem = this.elem.querySelector(".greet__button");
+  constructor(rootSelector, name) {
+    this.refs = this.getRefs(rootSelector);
 
-    this.inputElem.addEventListener("input", this.setInputWidth.bind(this));
-    this.inputElem.addEventListener("focusout", this.disableInput.bind(this));
-    this.buttonElem.addEventListener("click", this.enableInput.bind(this));
+    this.refs.input.value = name ? name : "";
 
-    this.disableInput();
+    this.setInputWidth();
+    this.bindEvents();
+  }
+
+  getName() {
+    return this.refs.input.value.trim();
   }
 
   updateText(timeOfDay) {
-    this.textElem.textContent = `Good ${timeOfDay}${
-      this.inputElem.value.length ? "," : "."
-    }`;
-  }
-
-  enableInput() {
-    this.inputElem.removeAttribute("disabled");
-    this.testElem.removeAttribute("disabled");
-    this.setInputWidth();
-    this.inputElem.focus();
-  }
-
-  disableInput() {
-    this.setInputWidth();
-    this.inputElem.setAttribute("disabled", "");
-    this.testElem.setAttribute("disabled", "");
+    this.refs.text.textContent = `Good ${timeOfDay},`;
   }
 
   setInputWidth() {
-    this.testElem.textContent = this.inputElem.value;
-    this.inputElem.style.width = this.inputElem.value.length
-      ? this.testElem.offsetWidth + "px"
-      : 0;
+    const name = this.getName();
+    this.refs.test.textContent = name ? name : this.refs.input.placeholder;
+    this.refs.input.style.width = this.refs.test.offsetWidth + "px";
+  }
+
+  bindEvents() {
+    this.refs.input.addEventListener("input", this.setInputWidth.bind(this));
+  }
+
+  getRefs(rootSelector) {
+    const rootElem = document.querySelector(rootSelector);
+    return {
+      text: rootElem.querySelector(".greet__text"),
+      input: rootElem.querySelector(".greet__input"),
+      test: rootElem.querySelector(".greet__test"),
+    };
   }
 }
 

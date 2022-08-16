@@ -24,10 +24,8 @@ const MONTHS = [
 ];
 
 class Clock {
-  constructor(elem) {
-    this.elem = elem;
-    this.timeElem = this.elem.querySelector(".clock__time");
-    this.dateElem = this.elem.querySelector(".clock__date");
+  constructor(rootSelector) {
+    this.refs = this.getRefs(rootSelector);
 
     this.locale = "en-GB";
     this.timeOptions = {
@@ -43,11 +41,11 @@ class Clock {
 
   updateTime() {
     const now = new Date();
-    this.timeElem.textContent = now.toLocaleTimeString(
+    this.refs.time.textContent = now.toLocaleTimeString(
       this.locale,
       this.timeOptions
     );
-    this.dateElem.textContent = now.toLocaleDateString(
+    this.refs.date.textContent = now.toLocaleDateString(
       this.locale,
       this.dateOptions
     );
@@ -61,6 +59,14 @@ class Clock {
     if (hours >= 12 && hours <= 17) return "afternoon";
     if (hours >= 18 && hours <= 23) return "evening";
     if (hours >= 0 && hours <= 5) return "night";
+  }
+
+  getRefs(rootSelector) {
+    const rootElem = document.querySelector(rootSelector);
+    return {
+      time: rootElem.querySelector(".clock__time"),
+      date: rootElem.querySelector(".clock__date"),
+    };
   }
 }
 
