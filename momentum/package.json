@@ -12,6 +12,7 @@
     "posthtml-include": "^1.7.4"
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "modern-normalize": "^1.1.0"
   }
 }

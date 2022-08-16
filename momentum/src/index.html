@@ -11,27 +11,34 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Fira+Sans+Condensed:wght@400;500&family=Fira+Sans:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/owfont-regular.css" />
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
     <h1 class="visually-hidden">Momentum</h1>
 
-    <main class="widgets">
+    <main class="widgets slider__bg">
       <div class="widgets__row">
-        <div class="widgets__left"></div>
-        <div class="widgets__right"></div>
-      </div>
-
-      <div class="widgets__row">
-        <div class="widgets__center">
-          <include src="./html/clock.html"></include>
+        <div class="widgets__item widgets__item--left"></div>
+        <div class="widgets__item widgets__item--right">
+          <include src="./html/weather.html"></include>
         </div>
       </div>
 
       <div class="widgets__row">
-        <div class="widgets__left"></div>
-        <div class="widgets__center"></div>
-        <div class="widgets__right"></div>
+        <div class="widgets__item widgets__item--center">
+          <include src="./html/clock.html"></include>
+          <include src="./html/greet.html"></include>
+          <include src="./html/slider.html"></include>
+        </div>
+      </div>
+
+      <div class="widgets__row">
+        <div class="widgets__item--left"></div>
+        <div class="widgets__item--center">
+          <include src="./html/quote.html"></include>
+        </div>
+        <div class="widgets__item--right"></div>
       </div>
     </main>
 

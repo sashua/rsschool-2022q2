@@ -1,17 +1,26 @@
 import { Clock } from "./js/clock";
+import { Greet } from "./js/greet";
+import { Slider } from "./js/slider";
+import { Weather } from "./js/weather";
+import { Quote } from "./js/quote";
 
 function main() {
-  console.log("main invoked");
+  const clock = new Clock(document.querySelector(".clock"));
+  const greet = new Greet(document.querySelector(".greet"));
+  const slider = new Slider(document.querySelector(".slider"));
+  const weather = new Weather(".weather", "Kyiv");
+  weather.updateWeather();
 
-  const timeElem = document.querySelector(".clock__time");
-  const dateElem = document.querySelector(".clock__date");
+  const quote = new Quote(".quote");
+  quote.fetchQuotes();
 
-  const clock = new Clock(timeElem, dateElem);
+  window.setInterval(updateInfo, 1000);
+  updateInfo();
 
-  window.setInterval(everySecondHandler, 1000);
-
-  function everySecondHandler() {
-    clock.showTime();
+  function updateInfo() {
+    const timeOfDay = clock.updateTime();
+    greet.updateText(timeOfDay);
+    slider.updateTimeOfDay(timeOfDay);
   }
 }
 

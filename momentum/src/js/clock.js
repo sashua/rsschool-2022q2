@@ -24,26 +24,44 @@ const MONTHS = [
 ];
 
 class Clock {
-  constructor(timeElem, dateElem) {
-    this.timeElem = timeElem;
-    this.dateElem = dateElem;
-    this.showTime();
+  constructor(elem) {
+    this.elem = elem;
+    this.timeElem = this.elem.querySelector(".clock__time");
+    this.dateElem = this.elem.querySelector(".clock__date");
+
+    this.locale = "en-GB";
+    this.timeOptions = {
+      hour12: false,
+    };
+    this.dateOptions = {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    };
   }
 
-  showTime() {
-    const date = new Date();
-    const hours = date.getHours().toString().padStart(2, "0");
-    const minutes = date.getMinutes().toString().padStart(2, "0");
-    const seconds = date.getSeconds().toString().padStart(2, "0");
-    this.timeElem.textContent = `${hours}:${minutes}:${seconds}`;
+  updateTime() {
+    const now = new Date();
+    this.timeElem.textContent = now.toLocaleTimeString(
+      this.locale,
+      this.timeOptions
+    );
+    this.dateElem.textContent = now.toLocaleDateString(
+      this.locale,
+      this.dateOptions
+    );
 
-    const weekDay = DAYS_OF_WEEK[date.getDay()];
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = MONTHS[date.getMonth()];
-    this.dateElem.textContent = `${weekDay} ${day} ${month}`;
+    return this.getTimeOfDay(now);
+  }
+
+  getTimeOfDay(date) {
+    const hours = date.getHours();
+    if (hours >= 6 && hours <= 11) return "morning";
+    if (hours >= 12 && hours <= 17) return "afternoon";
+    if (hours >= 18 && hours <= 23) return "evening";
+    if (hours >= 0 && hours <= 5) return "night";
   }
 }
 
 export { Clock };
-
-// TODO:

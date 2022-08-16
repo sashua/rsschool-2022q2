@@ -1,23 +1,26 @@
 .widgets {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 
   width: 100vw;
   height: 100vh;
-
-  background-image: url("../img/night/01.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
-.widgets__center {
-  text-align: center;
+.widgets__row {
+  display: flex;
+  justify-content: space-between;
 }
-.widgets__left {
-  text-align: left;
-}
-.widgets__right {
-  text-align: right;
+
+.widgets__item {
+  &--center {
+    margin: 0 auto;
+    text-align: center;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
 }
