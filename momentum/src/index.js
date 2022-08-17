@@ -4,6 +4,7 @@ import { Slider } from "./js/slider";
 import { Weather } from "./js/weather";
 import { Quote } from "./js/quote";
 import { Player } from "./js/player";
+import { Range } from "./js/range";
 
 class Momentum {
   constructor() {
@@ -35,6 +36,7 @@ class Momentum {
     this.slider.updateBg(timeOfDay);
     this.weather.updateWeather();
     this.quote.updateQuote();
+    this.player.renderDurationTime();
   }
 
   saveValues() {

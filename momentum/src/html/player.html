@@ -1,24 +1,56 @@
 <div class="player">
   <p class="player__song"></p>
   <div class="player__controls">
-    <button class="button player__button" data-action="prev" type="button">
-      <svg class="button__svg">
-        <use href="./img/icons.svg#play-prev"></use>
-      </svg>
-    </button>
-    <button class="button player__button" data-action="play" type="button">
-      <svg class="button__svg">
-        <use class="player__play-icon" href="./img/icons.svg#play"></use>
-        <use class="player__pause-icon" href="./img/icons.svg#pause"></use>
-      </svg>
-    </button>
-    <button class="button player__button" data-action="next" type="button">
-      <svg class="button__svg">
-        <use href="./img/icons.svg#play-next"></use>
-      </svg>
-    </button>
+    <div class="player__main-controls">
+      <button class="button player__button" data-action="prev" type="button">
+        <svg class="button__svg">
+          <use href="./img/icons.svg#play-prev"></use>
+        </svg>
+      </button>
+      <button class="button player__button" data-action="play" type="button">
+        <svg class="button__svg">
+          <use class="button__play-icon" href="./img/icons.svg#play"></use>
+          <use class="button__pause-icon" href="./img/icons.svg#pause"></use>
+        </svg>
+      </button>
+      <button class="button player__button" data-action="next" type="button">
+        <svg class="button__svg">
+          <use href="./img/icons.svg#play-next"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="player__volume-controls player--hiding">
+      <div class="player__volume-range">
+        <include src="./html/range.html"></include>
+      </div>
+      <button
+        class="button player__button"
+        data-icon="mute-volume"
+        type="button"
+      >
+        <svg class="button__svg">
+          <use
+            class="button__mute-icon"
+            href="./img/icons.svg#mute-volume"
+          ></use>
+          <use class="button__low-icon" href="./img/icons.svg#low-volume"></use>
+          <use class="button__mid-icon" href="./img/icons.svg#mid-volume"></use>
+          <use
+            class="button__high-icon"
+            href="./img/icons.svg#high-volume"
+          ></use>
+        </svg>
+      </button>
+    </div>
   </div>
-  <ul class="player__list">
+  <div class="player__duration-controls player--hiding">
+    <span class="player__duration-time">01:11</span>
+    <div class="player__duration-range">
+      <include src="./html/range.html"></include>
+    </div>
+    <span class="player__duration-time">03:45</span>
+  </div>
+  <ul class="player__list player--hiding">
     <li class="player__song"></li>
   </ul>
 </div>
