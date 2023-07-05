@@ -1,7 +1,7 @@
-# My personal
-.vscode/
-.parcel-cache/
-doc/
+# My
+.vscode
+doc
+.parcel-cache
 *.css.map
 
 # Logs

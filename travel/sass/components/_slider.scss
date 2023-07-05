@@ -1,0 +1,161 @@
+// === Sass utils start ===
+$mobile-img-width: 100%;
+$mobile-img-gap: 30px;
+$mobile-translate-value: calc(#{$mobile-img-width} + #{$mobile-img-gap});
+$mobile-offset-value: calc(-2 * #{$mobile-translate-value});
+
+$desktop-img-width: 100% * (800px / $max-width);
+$desktop-img-gap: 60px;
+$desktop-translate-value: calc(#{$desktop-img-width} + #{$desktop-img-gap});
+$desktop-offset-value: calc(
+  -1 * (#{$desktop-img-width} - (
+          100% - #{$desktop-img-width} - 2 * #{$desktop-img-gap}
+        ) / 2 + #{$desktop-translate-value})
+);
+
+@mixin slider-animation($offset-value, $translate-value) {
+  transform: translateX($offset-value);
+
+  &.go-next {
+    transition: transform $transition-params;
+    transform: translateX(calc(#{$offset-value} - #{$translate-value}));
+  }
+
+  &.go-prev {
+    transition: transform $transition-params;
+    transform: translateX(calc(#{$offset-value} + #{$translate-value}));
+  }
+}
+// --- Sass utils start ---
+
+.slider {
+  position: relative;
+}
+
+.slider__wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+// === Slider cards start ===
+.slider__list {
+  display: flex;
+  @include slider-animation($mobile-offset-value, $mobile-translate-value);
+
+  @include media-desktop {
+    @include slider-animation($desktop-offset-value, $desktop-translate-value);
+  }
+}
+
+.slider__item {
+  position: relative;
+
+  flex-basis: $mobile-img-width;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  border-radius: $border-radius-big;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-right: $mobile-img-gap;
+  }
+
+  @include media-desktop {
+    flex-basis: $desktop-img-width;
+
+    &:not(:last-child) {
+      margin-right: $desktop-img-gap;
+    }
+  }
+}
+
+.slider__caption {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.31;
+  text-transform: uppercase;
+  color: $white-color;
+
+  @include media-desktop {
+    top: calc(100% - 40px);
+    left: 15px;
+    transform: translateY(-100%);
+
+    font-size: 32px;
+  }
+}
+// --- Slider cards end ---
+
+// === Control buttons start ===
+.slider__controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__control {
+  padding: 5px;
+  color: $accent-color;
+
+  @include media-desktop {
+    flex-basis: calc(50% - $desktop-img-width / 2 - $desktop-img-gap);
+    color: transparent;
+  }
+}
+// --- Control buttons end ---
+
+// === Progress-bar start ===
+.slider__progress {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  @include media-desktop {
+    position: static;
+    margin-top: 24px;
+  }
+}
+
+.slider__progress-item {
+  width: 8px;
+  height: 8px;
+
+  background-color: $accent-color;
+  opacity: 0.5;
+  border-radius: 50%;
+
+  transition: opacity $transition-params;
+
+  &:not(:last-child) {
+    margin-right: 6px;
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  @include media-desktop {
+    width: 20px;
+    height: 20px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+// --- Progress icons end ---
