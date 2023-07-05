@@ -1,0 +1,19 @@
+@mixin media-mobile-only {
+  @media screen and (max-width: ($desktop-breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-2x {
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}

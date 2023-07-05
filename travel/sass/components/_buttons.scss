@@ -1,0 +1,154 @@
+// === Button start ===
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.31;
+
+  color: $white-color;
+  background-color: $primary-color;
+  box-shadow: $button-shadow;
+  border-radius: $border-radius;
+  transition: background-color $transition-params;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-hover-color;
+    outline: none;
+  }
+
+  &--big {
+    padding: 8px 13px;
+
+    font-size: 11px;
+    line-height: 1.32;
+    text-transform: capitalize;
+
+    box-shadow: $button-big-shadow;
+
+    @include media-desktop {
+      min-width: 228px;
+      padding: 14px 33px;
+      font-size: 24px;
+    }
+  }
+
+  &--wide {
+    width: 100%;
+    padding: 10px 20px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    box-shadow: $button-big-shadow;
+
+    @include media-desktop {
+      padding: 14px 33px;
+      font-size: 24px;
+    }
+  }
+
+  &--blue {
+    background-color: #1877f2;
+
+    &:hover,
+    &:focus {
+      background-color: hsl(214, 89%, 56%);
+    }
+  }
+
+  &--white {
+    color: $primary-color;
+    background-color: #ffffff;
+
+    &:hover,
+    &:focus {
+      color: $primary-hover-color;
+      background-color: #ffffff;
+    }
+  }
+}
+
+.button__svg {
+  width: 13px;
+  height: 11px;
+  margin-right: 6px;
+  fill: currentColor;
+
+  transform: scale(1);
+  transition: transform $transition-params;
+
+  .button:hover > &,
+  .button:focus > & {
+    transform: scale(1.1);
+  }
+
+  .button--wide > & {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+
+    @include media-desktop {
+      width: 24px;
+      height: 24px;
+      margin-right: 13px;
+    }
+  }
+
+  @include media-desktop {
+    width: 36px;
+    height: 23px;
+    margin-right: 13px;
+  }
+}
+// --- Button end ---
+
+// === Icon-button start ===
+.icon-button {
+  display: flex;
+  align-items: center;
+
+  transform: scale(1);
+  transition: transform $transition-params;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &:not(&--disabled):hover,
+  &:not(&--disabled):focus {
+    transform: scale(1.1);
+  }
+}
+
+.icon-button__svg {
+  fill: currentColor;
+}
+// --- Icon-button end ---
+
+// === Link-button start ===
+.link-button {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.2;
+  text-decoration-line: underline;
+
+  color: $primary-color;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  transition: color $transition-params;
+
+  &:hover,
+  &:focus {
+    color: $primary-hover-color;
+  }
+
+  @include media-desktop {
+    font-size: 15px;
+  }
+}
+// --- Link-button end ---

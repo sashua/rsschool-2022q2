@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+  color: $white-color;
+}
+
+.logo__svg {
+  fill: currentColor;
+}
+
+.logo__text {
+  display: none;
+
+  @include media-desktop {
+    display: block;
+    margin-left: 6px;
+
+    font-family: $logo-font;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.22;
+  }
+}
