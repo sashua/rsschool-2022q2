@@ -1,0 +1,156 @@
+.player {
+  @include font($size: 1rem);
+
+  &--hiding {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-params;
+
+    .player:hover & {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+.player__controls {
+  display: flex;
+  margin-bottom: 1em;
+  gap: 0.5em;
+}
+
+// === Main controls start ===
+.player__main-controls {
+  display: flex;
+}
+
+.player__main-controls > .button {
+  border: 2px solid #ffffff;
+
+  &[data-action="prev"],
+  &[data-action="next"] {
+    transform: scale(0.75);
+  }
+
+  &[data-action="play"] {
+    .button__play-icon {
+      display: block;
+    }
+    .button__pause-icon {
+      display: none;
+    }
+  }
+
+  &[data-action="pause"] {
+    .button__play-icon {
+      display: none;
+    }
+    .button__pause-icon {
+      display: block;
+    }
+  }
+}
+// --- Main controls end ---
+
+// === Volume controls start ===
+.player__volume-controls {
+  display: flex;
+  align-items: center;
+
+  &:hover .range,
+  &:hover .button {
+    opacity: 1;
+  }
+}
+
+.player__volume-range {
+  width: 5rem;
+}
+
+.player__volume-controls > .button {
+  transform: scale(0.75);
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+
+  & use {
+    display: none;
+  }
+
+  &[data-icon="mute-volume"] {
+    & use[href$="mute-volume"] {
+      display: block;
+    }
+  }
+  &[data-icon="low-volume"] {
+    & use[href$="low-volume"] {
+      display: block;
+    }
+  }
+  &[data-icon="mid-volume"] {
+    & use[href$="mid-volume"] {
+      display: block;
+    }
+  }
+  &[data-icon="high-volume"] {
+    & use[href$="high-volume"] {
+      display: block;
+    }
+  }
+}
+// --- Volume controls end ---
+
+// === Duration controls start ===
+.player__duration-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.player__duration-range {
+  flex-grow: 1;
+
+  .player__duration-controls:hover & > .range {
+    opacity: 1;
+  }
+}
+
+.player__duration-time {
+  @include font($family: $mono-font, $size: 0.75em);
+
+  opacity: 0.5;
+  transition: opacity $transition-params;
+
+  .player__duration-controls:hover & {
+    opacity: 1;
+  }
+}
+// --- Duration controls end ---
+
+// === Songs list start ===
+.player__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  padding: 0.5em;
+}
+
+.player__song {
+  padding-left: 2em;
+  background-image: url("../img/song.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  opacity: 0.5;
+  transition: opacity $transition-params;
+
+  &--active {
+    font-weight: 500;
+    opacity: 1;
+  }
+}
+// --- Songs list end ---

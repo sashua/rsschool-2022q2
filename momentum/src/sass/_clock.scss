@@ -1,0 +1,15 @@
+.clock {
+  padding-bottom: 2rem;
+}
+
+.clock__time {
+  @include font(
+    $family: $mono-font,
+    $size: 8rem,
+    $weight: 500,
+    $spacing: -0.1em
+  );
+}
+.clock__date {
+  @include font($size: 2rem);
+}

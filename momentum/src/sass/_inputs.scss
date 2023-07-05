@@ -1,0 +1,22 @@
+.input {
+  padding: 0.1em 0.2em;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+  cursor: pointer;
+  transition: border-color $transition-params,
+    background-color $transition-params;
+
+  &::placeholder {
+    color: currentColor;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    background-color: $transparent-bg-color;
+  }
+
+  &:focus {
+    background-color: $transparent-bg-color;
+    border-color: #ffffff;
+  }
+}

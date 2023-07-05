@@ -1,0 +1,20 @@
+.greet {
+  @include font($size: 3rem, $weight: 500);
+}
+
+.greet__input {
+  margin-left: -0.2em;
+
+  .greet:hover & {
+    background-color: $transparent-bg-color;
+  }
+}
+
+.greet__test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.1em 0.2em;
+  border: 1px solid transparent;
+  visibility: hidden;
+}

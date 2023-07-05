@@ -1,6 +1,9 @@
 # My
 .vscode
 doc
+.parcel-cache
+*.css.map
+.DS_Store
 
 # Logs
 logs
