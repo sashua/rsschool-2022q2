@@ -189,7 +189,6 @@ class Slider {
 
 class Progress {
   constructor(items, active) {
-    console.log(items);
     this.items = items;
     this.active = active;
 

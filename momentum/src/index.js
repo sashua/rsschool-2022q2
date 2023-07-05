@@ -1,10 +1,9 @@
 import { Clock } from "./js/clock";
 import { Greet } from "./js/greet";
+import { Player } from "./js/player";
+import { Quote } from "./js/quote";
 import { Slider } from "./js/slider";
 import { Weather } from "./js/weather";
-import { Quote } from "./js/quote";
-import { Player } from "./js/player";
-import { Range } from "./js/range";
 
 class Momentum {
   constructor() {
@@ -55,18 +54,3 @@ class Momentum {
 }
 
 new Momentum();
-
-console.log(`
-Score: 75 / 150
-1. Часы и календарь 15 / 15
-2. Приветствие 10 / 10
-3. Смена фонового изображения 0 / 20
-4. Виджет погоды 15 / 15
-5. Виджет цитата дня 10 / 10
-6. Аудиоплеер 15 / 15
-7. Продвинутый аудиоплеер 0 / 20
-8. Перевод приложения на два языка 0 / 15
-9. Получение фонового изображения от API 10 / 10
-10. Настройки приложения 0 / 20
-11. Дополнительный функционал на выбор 0 / 10
-`);

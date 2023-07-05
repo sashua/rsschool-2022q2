@@ -8,6 +8,8 @@
     "build": "parcel build --public-url /rsschool-2022q2"
   },
   "devDependencies": {
+    "@parcel/optimizer-data-url": "^2.6.2",
+    "@parcel/transformer-inline-string": "^2.6.2",
     "@parcel/transformer-sass": "^2.6.2",
     "parcel": "latest",
     "posthtml-include": "^1.7.4"

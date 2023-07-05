@@ -1,26 +1,20 @@
+import quotes from "./quotes.json";
+
 class Quote {
   constructor(rootSelector, updateIntervalMinutes) {
     this.refs = this.getRefs(rootSelector);
-    this.url = "quotes.json";
-    this.quotes = null;
+    this.quotes = quotes;
 
     this.lastUpdateTime = 0;
     this.updateInterval = updateIntervalMinutes * 60 * 1000;
 
     this.refs.button.addEventListener("click", this.onButtonClick.bind(this));
-    this.fetchQuotes();
   }
 
   onButtonClick(e) {
     this.lastUpdateTime = 0;
     this.updateQuote();
     this.refs.button.blur();
-  }
-
-  async fetchQuotes() {
-    const response = await fetch(this.url);
-    const data = await response.json();
-    this.quotes = data;
   }
 
   getRandomQuote() {

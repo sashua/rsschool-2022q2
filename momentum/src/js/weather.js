@@ -44,7 +44,7 @@ class Weather {
 
   async fetchWeather() {
     const city = this.getCity();
-    this.apiUrl.searchParams.set("q", city ? city : "Minsk");
+    this.apiUrl.searchParams.set("q", city ? city : "Kyiv");
     const response = await fetch(this.apiUrl);
     const weatherData = await response.json();
     return weatherData;

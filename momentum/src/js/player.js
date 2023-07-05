@@ -1,5 +1,5 @@
 import { Range } from "./range";
-import songs from "./songs.json";
+import songs from "./songs";
 const shuffle = require("lodash.shuffle");
 
 class Player {
@@ -33,7 +33,6 @@ class Player {
   setDuration(time) {
     const duration = this.audio.duration ? this.audio.duration : 0;
     this.audio.currentTime = (duration * time) / 100;
-    console.log(time);
     this.renderDurationTime();
   }
 
@@ -63,7 +62,6 @@ class Player {
     const duration = this.audio.duration;
     this.durationControl.setRange(0, currentTime, duration);
     this.renderDurationTime();
-    console.log(currentTime, duration);
   }
 
   setVolume(level) {
